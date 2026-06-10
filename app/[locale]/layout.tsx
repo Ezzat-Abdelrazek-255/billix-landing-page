@@ -164,13 +164,16 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html data-scroll-behavior="smooth" lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html
+      data-scroll-behavior="smooth"
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      className={`${ivyprestoHeadline.variable} ${helveticaNowProText.variable} ${ibmPlexSansArabic.variable}`}
+    >
       <head>
         <JsonLd />
       </head>
-      <body
-        className={`${ivyprestoHeadline.variable} ${helveticaNowProText.variable} ${ibmPlexSansArabic.variable} antialiased`}
-      >
+      <body className="antialiased">
         <NextIntlClientProvider>
           <Providers>
             <Analytics />
