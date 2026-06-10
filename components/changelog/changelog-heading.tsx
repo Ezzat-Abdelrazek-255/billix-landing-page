@@ -1,13 +1,10 @@
 import PageHeading from "../ui/page-heading";
+import { useTranslations } from "next-intl";
 
 const ChangelogHeading = () => {
-  return (
-    <PageHeading
-      eyebrow="See what’s new in Billix."
-      title="Changelog"
-      description="Stay up to date with the latest improvements, features, and fixes. We’re constantly refining Billix to make your workflow faster, smoother, and more powerful."
-    />
-  );
+  const t = useTranslations("changelog.heading");
+
+  return <PageHeading eyebrow={t("eyebrow")} title={t("title")} description={t("description")} />;
 };
 
 export default ChangelogHeading;

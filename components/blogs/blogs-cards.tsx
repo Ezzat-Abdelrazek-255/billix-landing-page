@@ -7,10 +7,12 @@ import { Carousel, CarouselContent } from "@/components/ui/carousel";
 import { INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import { cn } from "@/lib/utils";
 import { BLOG_POSTS, CATEGORIES } from "@/content/blogs";
+import { useTranslations } from "next-intl";
 
 const INITIAL_COUNT = 6;
 
 const BlogCards = () => {
+  const t = useTranslations("blogs.cards");
   const [activeCategory, setActiveCategory] = useState<string>(CATEGORIES[0]);
   const [searchQuery, setSearchQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
@@ -56,7 +58,7 @@ const BlogCards = () => {
         <input
           data-reveal-delay={LOADER_DELAY + INTRO_STAGGER}
           data-reveal-group
-          placeholder="Search for topics"
+          placeholder={t("searchPlaceholder")}
           value={searchQuery}
           onChange={handleSearch}
           className="bg-background-muted h-[5.8rem] w-full rounded-full text-center font-sans font-medium"
@@ -102,14 +104,14 @@ const BlogCards = () => {
               ))
             ) : (
               <div className="col-span-12 py-[8rem] text-center">
-                <p className="body-base opacity-60">No articles found matching your search.</p>
+                <p className="body-base opacity-60">{t("noResults")}</p>
               </div>
             )}
           </div>
           {hasMore && (
             <div>
               <BubbleButton variant="secondary" onClick={() => setVisibleCount(prev => prev + 6)}>
-                Show more
+                {t("showMore")}
               </BubbleButton>
             </div>
           )}

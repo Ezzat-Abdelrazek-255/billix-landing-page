@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import DotsPattern from "@/components/ui/dots-pattern";
 import Eyebrow from "@/components/ui/eyebrow";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
@@ -19,31 +20,31 @@ interface TimelinePointProps {
   left: string;
 }
 
-const FEATURES: FeatureCircleProps[] = [
+const FEATURES: Array<Omit<FeatureCircleProps, "label"> & { id: string }> = [
   {
-    label: "Unified Workflow Sync",
+    id: "sync",
     position: `right-0 translate-x-[50vw] -translate-y-1/2 top-1/2`,
     textOffset: "mr-[30vw]",
     size: "h-[90vw]",
   },
   {
-    label: "Effortless For Everyone",
+    id: "effortless",
     position: "top-1/2 right-0 -translate-x-[30vw] -translate-y-1/2",
     textOffset: "ml-[2vw]",
     size: "h-[45vw]",
   },
   {
-    label: "Enterprise-Grade Automation",
+    id: "automation",
     position: "top-1/2 right-0 -translate-x-[65vw] -translate-y-1/2 md:block hidden",
     textOffset: "mr-[10vw]",
     size: "h-[30vw]",
   },
 ];
 
-const TIMELINE_POINTS: TimelinePointProps[] = [
-  { label: "Unlimited automations", left: "left-(--container-px)" },
-  { label: "Dedicated AI models", left: "left-[70rem]" },
-  { label: "Team workspaces", left: "left-[120rem]" },
+const TIMELINE_POINTS: Array<Omit<TimelinePointProps, "label"> & { id: string }> = [
+  { id: "automations", left: "left-(--container-px)" },
+  { id: "models", left: "left-[70rem]" },
+  { id: "workspaces", left: "left-[120rem]" },
 ];
 
 const FeatureCircle: React.FC<FeatureCircleProps> = ({ label, position, textOffset, size }) => (
@@ -74,6 +75,7 @@ const TimelinePoint: React.FC<TimelinePointProps> = ({ label, left }) => (
 );
 
 const EnterpriseValuesSection: React.FC = () => {
+  const t = useTranslations("enterprise");
   const containerRef = useRef<HTMLElement>(null);
   useGSAP(
     () => {
@@ -110,20 +112,20 @@ const EnterpriseValuesSection: React.FC = () => {
 
       <div className="col-span-12 flex flex-col justify-between sm:col-span-8 md:col-span-6">
         <div className="gap-xl flex flex-col">
-          <Eyebrow logoClassName="text-secondary">Our Values</Eyebrow>
+          <Eyebrow logoClassName="text-secondary">{t("values.eyebrow")}</Eyebrow>
           <h2 data-split="heading" className="h2">
-            Your team&apos;s All-in-One AI Workspace for <span className="h2-serif">Workflows and Content</span>
+            {t.rich("values.title", {
+              serif: (chunks) => <span className="h2-serif">{chunks}</span>,
+            })}
           </h2>
         </div>
 
         <div className="gap-2xl flex flex-col">
           <p data-split="heading" className="body-base text-white/60">
-            Billix unifies communication, automation, and content creation in a single AI workspace. Teams can chat,
-            automate tasks, manage files, and execute actions across tools — all through natural language. No setup, no
-            flow builders, no technical experience needed.
+            {t("values.description")}
           </p>
           <p data-split="heading" className="font-sans text-[3.2rem] font-bold tracking-tight capitalize">
-            AI that scales your enterprise
+            {t("values.tagline")}
           </p>
         </div>
       </div>
@@ -133,13 +135,13 @@ const EnterpriseValuesSection: React.FC = () => {
       </div>
 
       <div className="absolute inset-0 z-0 h-full w-full">
-        {FEATURES.map((feature, idx) => (
-          <FeatureCircle key={idx} {...feature} />
+        {FEATURES.map(({ id, ...feature }, idx) => (
+          <FeatureCircle key={idx} label={t(`values.features.${id}`)} {...feature} />
         ))}
 
         <div className="timeline__wrap absolute top-2/5 w-full origin-left scale-x-0 border border-white">
-          {TIMELINE_POINTS.map((point, idx) => (
-            <TimelinePoint key={idx} {...point} />
+          {TIMELINE_POINTS.map(({ id, ...point }, idx) => (
+            <TimelinePoint key={idx} label={t(`values.timeline.${id}`)} {...point} />
           ))}
         </div>
       </div>

@@ -6,6 +6,7 @@ import { BRANDS } from "@/constants/brands";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -25,6 +26,7 @@ const MOBILE_ICONS = ICON_COMPONENTS.map((Component, index) => ({
 }));
 
 const HomeHeroValueProposition = () => {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -104,10 +106,9 @@ const HomeHeroValueProposition = () => {
         data-split-delay={LOADER_DELAY + INTRO_STAGGER}
         className="text-foreground/60 value-proposition__text col-span-12 text-center sm:col-span-8 sm:col-start-3 md:col-span-6 md:col-start-4"
       >
-        Billix is the only AI coworker that gets work done across 500+ apps. With{" "}
-        <span className="text-primary">Chat</span>, <span className="text-primary">Image generation</span>, and{" "}
-        <span className="text-primary">Seamless integrations</span>, you give the instructions — Billix reads, clicks,
-        writes, navigates software, and completes tasks end-to-end
+        {t.rich("hero.valueProposition", {
+          highlight: chunks => <span className="text-primary">{chunks}</span>,
+        })}
       </p>
 
       <div className="md:pt-xl col-span-12 hidden w-full justify-center overflow-hidden sm:flex">

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CHAT_URL } from "@/constants";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import type { PricingPlan } from "@/types";
 
 const PricingCard = ({
@@ -14,6 +15,7 @@ const PricingCard = ({
   variant?: "primary" | "secondary";
   isAnnually?: boolean;
 }) => {
+  const t = useTranslations("pricing");
   const { name, monthlyPrice, annualPrice, description, credits, features, buttonLabel } = plan;
 
   const displayMonthly = monthlyPrice ?? 0;
@@ -41,7 +43,7 @@ const PricingCard = ({
                 isAnnually && hasAnnual && "-translate-y-[150%]",
               )}
             >
-              {hasAnnual ? "Paid Monthly" : "Free"}
+              {hasAnnual ? t("card.paidMonthly") : t("card.free")}
             </p>
 
             {hasAnnual && (
@@ -52,7 +54,7 @@ const PricingCard = ({
                   isAnnually && "translate-y-0",
                 )}
               >
-                Paid Annually
+                {t("card.paidAnnually")}
               </p>
             )}
           </div>
@@ -71,11 +73,13 @@ const PricingCard = ({
                 <span className={cn("ease-primary inline-block duration-700", isAnnually && "-translate-y-[125%]")}>
                   ${displayMonthly.toString().padStart(2, "0")}
                 </span>{" "}
-                Usd
+                {t("card.usd")}
               </span>
             </>
           ) : (
-            <span className="leading-none uppercase">${displayMonthly.toString().padStart(2, "0")} Usd</span>
+            <span className="leading-none uppercase">
+              ${displayMonthly.toString().padStart(2, "0")} {t("card.usd")}
+            </span>
           )}
           <span
             className={cn(
@@ -83,7 +87,7 @@ const PricingCard = ({
               variant === "secondary" && "text-white",
             )}
           >
-            per month
+            {t("card.perMonth")}
           </span>
         </p>
         <div
@@ -97,7 +101,7 @@ const PricingCard = ({
           <Link href={CHAT_URL}>{buttonLabel}</Link>
         </Button>
         <div className="gap-sm flex flex-col">
-          <h4 className="font-serif text-lg">What&apos;s Included:</h4>
+          <h4 className="font-serif text-lg">{t("card.whatsIncluded")}</h4>
           <ul className="text-base-sm font-sans font-medium">
             <li
               className={cn(
@@ -113,7 +117,7 @@ const PricingCard = ({
               >
                 {credits.toLocaleString()}
               </div>
-              <p>Credits per month</p>
+              <p>{t("card.creditsPerMonth")}</p>
             </li>
             {features.slice(1).map(feature => (
               <li

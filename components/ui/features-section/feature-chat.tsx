@@ -7,8 +7,10 @@ import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import LampIcon from "@/icons/ui/lamp-icon";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
 const FeatureChat = () => {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -78,19 +80,22 @@ const FeatureChat = () => {
     >
       <DotsPattern />
       <div className="gap-sm flex flex-col items-center text-center">
-        <h3 className="h3-serif bg-background-muted w-fit">Chat-Native Automation</h3>
-        <p className="body-base-sm text-primary">
-          Type or speak your request. Billix understands your goal and starts executing immediately. No setup, no
-          diagrams, no steps.
-        </p>
+        <h3 className="h3-serif bg-background-muted w-fit">{t("features.chat.title")}</h3>
+        <p className="body-base-sm text-primary">{t("features.chat.description")}</p>
       </div>
       <div className="gap-lg flex grow flex-col justify-start">
         <div className="gap-base flex items-end">
           <div className="text-primary border-primary p-base bg-background-muted rounded-sm border border-dashed font-sans font-medium">
-            Create a task in Notion from this message and assign it to me for tomorrow
+            {t("features.chat.userMessage")}
           </div>
           <div className="h-[4.8rem] shrink-0 basis-[4.8rem] rounded-full">
-            <Image src="/avatar.png" className="h-full w-full object-cover" alt="Avatar" width={48} height={48} />
+            <Image
+              src="/avatar.png"
+              className="h-full w-full object-cover"
+              alt={t("features.chat.avatarAlt")}
+              width={48}
+              height={48}
+            />
           </div>
         </div>
         <div className="gap-lg flex flex-col">
@@ -99,19 +104,19 @@ const FeatureChat = () => {
               <div className="p-sm border-primary grid size-[3.2rem] place-content-center rounded-full border border-dashed">
                 <LampIcon className="w-full" />
               </div>
-              <p className="font-sans font-medium">Extracting the task details</p>
+              <p className="font-sans font-medium">{t("features.chat.steps.extracting")}</p>
             </div>
             <div className="gap-sm flex items-center">
               <div className="p-sm border-primary grid size-[3.2rem] place-content-center rounded-full border border-dashed">
                 <LampIcon className="w-full" />
               </div>
-              <p className="font-sans font-medium">Creating a new Notion Item</p>
+              <p className="font-sans font-medium">{t("features.chat.steps.creating")}</p>
             </div>
             <div className="gap-sm flex items-center">
               <div className="p-sm border-primary grid size-[3.2rem] place-content-center rounded-full border border-dashed">
                 <LampIcon className="w-full" />
               </div>
-              <p className="font-sans font-medium">Assigning it to your for tomorrow</p>
+              <p className="font-sans font-medium">{t("features.chat.steps.assigning")}</p>
             </div>
           </div>
           <div className="gap-base flex items-start">
@@ -124,10 +129,10 @@ const FeatureChat = () => {
               <div className="bg-primary-dark text-background gap-xs p-base relative flex h-full w-full items-center justify-center rounded-[0.7rem] text-center text-[5.6rem]">
                 <p className="px-base-lg absolute top-1/2 left-0 -translate-y-1/2 text-left font-sans text-base font-medium whitespace-nowrap text-white opacity-100">
                   <span className="block overflow-hidden">
-                    <span className="chat-box-text block translate-y-[110%]">Task created in Notion and scheduled</span>
+                    <span className="chat-box-text block translate-y-[110%]">{t("features.chat.result.line1")}</span>
                   </span>
                   <span className="block overflow-hidden">
-                    <span className="chat-box-text block translate-y-[110%]">for tomorrow</span>
+                    <span className="chat-box-text block translate-y-[110%]">{t("features.chat.result.line2")}</span>
                   </span>
                 </p>
                 <div className="gap-xs absolute top-1/2 left-1/2 flex -translate-1/2 items-center">

@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 import { CircleCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -77,6 +78,7 @@ const CirclePath = ({ id, viewBox, d, strokeWidth = "1", className }: CirclePath
 );
 
 const FeatureSecurity = () => {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
   const setupMotionPath = (circles: HTMLDivElement[], path: SVGPathElement, positions: readonly number[]): void => {
@@ -331,11 +333,8 @@ const FeatureSecurity = () => {
       </div>
 
       <div className="gap-sm feature-header text-primary flex w-full flex-col text-center">
-        <h3 className="h3-serif">Enterprise-Grade Security</h3>
-        <p className="body-base-sm text-balance text-inherit">
-          Your data stays encrypted, your credentials safe, and every action logged–while Billix executes tasks inside
-          your tools securely.
-        </p>
+        <h3 className="h3-serif">{t("features.security.title")}</h3>
+        <p className="body-base-sm text-balance text-inherit">{t("features.security.description")}</p>
       </div>
     </div>
   );

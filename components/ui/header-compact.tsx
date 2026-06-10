@@ -7,6 +7,7 @@ import ThemeSelector from "./theme-selector";
 import { MAIN_ROUTES } from "@/constants";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import { cn, vhToPx } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -17,6 +18,7 @@ const HeaderCompact = () => {
   const navRef = useRef<HTMLElement | null>(null);
   const scrollYRef = useRef(0);
   const path = usePathname();
+  const t = useTranslations("common");
 
   useEffect(() => {
     const navEl = navRef.current;
@@ -141,10 +143,10 @@ const HeaderCompact = () => {
               <span className="bg-background ease-primary absolute right-0 left-0 h-[0.2rem] translate-y-[-0.4rem] transition-transform duration-[735ms] group-hover/btn:translate-y-[0.4rem] group-data-[navigation-status=active]/nav:translate-y-0 group-data-[navigation-status=active]/nav:rotate-45" />
               <span className="bg-background ease-primary absolute right-0 left-0 h-[0.2rem] translate-y-[0.3rem] transition-transform duration-[735ms] group-hover/btn:-translate-y-[0.3rem] group-data-[navigation-status=active]/nav:translate-y-0 group-data-[navigation-status=active]/nav:-rotate-45" />
             </div>
-            <span className="mt-[2px] inline-block font-sans text-base font-medium">Menu</span>
+            <span className="mt-[2px] inline-block font-sans text-base font-medium">{t("actions.menu")}</span>
           </button>
           <div className="gap-xs pointer-events-auto flex items-center">
-            <BubbleButton variant="secondary">Start for free</BubbleButton>
+            <BubbleButton variant="secondary">{t("actions.startForFree")}</BubbleButton>
             <ThemeSelector className="bg-foreground text-background border-background/60" />
           </div>
         </div>
@@ -177,7 +179,9 @@ const HeaderCompact = () => {
                     )}
                   >
                     <p className="ease-primary translate-y-[150%] transition-colors transition-transform duration-[735ms] group-data-[navigation-status=active]/nav:translate-y-0">
-                      <span className="group-hover/item:text-primary transition-all duration-300">{item.label}</span>
+                      <span className="group-hover/item:text-primary transition-all duration-300">
+                        {t(`nav.${item.key}`)}
+                      </span>
                     </p>
                   </NextLink>
                 </li>

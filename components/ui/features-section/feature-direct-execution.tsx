@@ -7,6 +7,7 @@ import LockIcon from "@/icons/ui/lock-icon";
 import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
 // Constants
 const STAR_POSITIONS = [0.05, 0.25, 0.45, 0.65, 0.85];
@@ -137,15 +138,16 @@ const FeatureDirectExecution = () => {
 };
 
 // Subcomponents
-const Header = () => (
-  <div className="gap-sm flex flex-col items-center text-center">
-    <h3 className="h3-serif bg-background-muted w-fit">Direction Execution</h3>
-    <p className="body-base-sm text-primary">
-      Billix understands your intent and executes tasks inside your tools — reading, clicking, writing, and navigating
-      automatically. No triggers. No flow. No setup.
-    </p>
-  </div>
-);
+const Header = () => {
+  const t = useTranslations("home");
+
+  return (
+    <div className="gap-sm flex flex-col items-center text-center">
+      <h3 className="h3-serif bg-background-muted w-fit">{t("features.directExecution.title")}</h3>
+      <p className="body-base-sm text-primary">{t("features.directExecution.description")}</p>
+    </div>
+  );
+};
 
 const CircleAnimation = () => (
   <div className="absolute left-1/2 aspect-square w-[44.8rem] -translate-x-1/2 translate-y-[3.2rem] scale-100">

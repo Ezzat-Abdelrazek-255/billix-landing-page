@@ -1,30 +1,29 @@
 import Eyebrow from "./eyebrow";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useTranslations } from "next-intl";
 
 type FaqItem = {
   title: string;
-  content: string | string[];
+  content: string[];
 };
 
-type FaqsSectionProps = {
-  faqs: FaqItem[];
-};
+const FaqsSection = () => {
+  const t = useTranslations("common.faqs");
+  const faqs = t.raw("items") as FaqItem[];
 
-const FaqsSection = ({ faqs }: FaqsSectionProps) => {
   return (
     <section>
       <div className="grid-12 px-(--container-px)">
         <div className="col-span-12 col-start-1 flex flex-col gap-[6.4rem] md:col-span-6 md:col-start-4">
           <div className="gap-base flex flex-col items-center text-center">
             <div className="gap-base flex flex-col items-center">
-              <Eyebrow>FAQS</Eyebrow>
+              <Eyebrow>{t("eyebrow")}</Eyebrow>
               <h1 data-split="heading" className="h2">
-                Frequently Asked <span className="h2-serif">Questions</span>
+                {t("titleStart")} <span className="h2-serif">{t("titleSerif")}</span>
               </h1>
             </div>
             <p data-split="heading" className="body-base">
-              Find quick, helpful explanations about features, pricing, integrations, and how Billix fits into your
-              workflow.
+              {t("description")}
             </p>
           </div>
 
@@ -33,11 +32,9 @@ const FaqsSection = ({ faqs }: FaqsSectionProps) => {
               <AccordionItem key={index} value={`item-${index + 1}`}>
                 <AccordionTrigger>{faq.title}</AccordionTrigger>
                 <AccordionContent className="flex flex-col gap-4 text-balance">
-                  {Array.isArray(faq.content) ? (
-                    faq.content.map((paragraph, idx) => <p key={idx}>{paragraph}</p>)
-                  ) : (
-                    <p>{faq.content}</p>
-                  )}
+                  {faq.content.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
                 </AccordionContent>
               </AccordionItem>
             ))}

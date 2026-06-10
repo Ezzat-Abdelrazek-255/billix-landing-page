@@ -1,0 +1,43 @@
+{
+  "lastUpdatedLabel": "Last Updated",
+  "lastUpdatedDate": "September 9, 2025",
+  "privacy": {
+    "metadata": {
+      "title": "Privacy Policy",
+      "description": "Learn how Billix collects, uses, and protects your personal data. We are committed to transparency and safeguarding your privacy.",
+      "ogTitle": "Privacy Policy | Billix",
+      "ogDescription": "Learn how Billix collects, uses, and protects your personal data."
+    },
+    "heading": {
+      "eyebrow": "Your Data & Privacy",
+      "title": "Privacy policy",
+      "description": "We explain what information we collect, how it’s used, and the choices you have to control and protect your personal data."
+    }
+  },
+  "terms": {
+    "metadata": {
+      "title": "Terms of Service",
+      "description": "Review the terms and conditions for using Billix. These terms outline your rights, responsibilities, and acceptable use of our AI workspace platform.",
+      "ogTitle": "Terms of Service | Billix",
+      "ogDescription": "Review the terms and conditions for using the Billix AI workspace platform."
+    },
+    "heading": {
+      "eyebrow": "Terms & Conditions",
+      "title": "Terms of service",
+      "description": "These terms outline your rights and responsibilities when using our services, including acceptable use and account obligations."
+    }
+  },
+  "security": {
+    "metadata": {
+      "title": "Security Policy",
+      "description": "Learn how Billix safeguards your data with industry-standard security practices, infrastructure protections, and internal controls.",
+      "ogTitle": "Security Policy | Billix",
+      "ogDescription": "Learn how Billix safeguards your data with industry-standard security practices."
+    },
+    "heading": {
+      "eyebrow": "Security & Protection",
+      "title": "Security policy",
+      "description": "Learn how we safeguard your data through industry-standard security practices, infrastructure protections, and internal controls."
+    }
+  }
+}

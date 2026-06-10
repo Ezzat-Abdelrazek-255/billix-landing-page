@@ -5,8 +5,10 @@ import DotsPattern from "../dots-pattern";
 import { Marquee } from "../marquee";
 import { BRANDS } from "@/constants/brands";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
+import { useTranslations } from "next-intl";
 
 const FeatureIntegrations = () => {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
   return (
     <div ref={containerRef} className="bg-background-muted p-lg relative z-0 h-full w-full overflow-hidden rounded-sm">
@@ -51,11 +53,8 @@ const FeatureIntegrations = () => {
         </div>
       </div>
       <div className="gap-sm absolute bottom-[var(--space-lg)] flex flex-col text-center">
-        <h3 className="h3-serif">500+ Instant Integrations</h3>
-        <p className="body-base-sm text-primary text-balance">
-          Billix connects to 500+ tools instantly — Slack, Notion, HubSpot, Gmail, ClickUp, Drive, and many more. No API
-          keys. No setup. Billix works inside them like a real employee.
-        </p>
+        <h3 className="h3-serif">{t("features.integrations.title")}</h3>
+        <p className="body-base-sm text-primary text-balance">{t("features.integrations.description")}</p>
       </div>
     </div>
   );

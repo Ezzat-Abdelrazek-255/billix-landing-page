@@ -1,13 +1,12 @@
 "use client";
 
-import React, { AnchorHTMLAttributes } from "react";
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
+import React, { AnchorHTMLAttributes, ComponentProps } from "react";
+import { Link, useRouter } from "@/i18n/navigation";
 import { ALL_ROUTES } from "@/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-type NextLinkProps = LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>;
+type NextLinkProps = ComponentProps<typeof Link> & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const classMap: { [key: string]: string } = {
   "/": "home-page",

@@ -1,0 +1,186 @@
+{
+  "hero": {
+    "heading": {
+      "line1": "Stop handling the daily work",
+      "line2": "Start directing billix"
+    },
+    "chat": {
+      "placeholder": "Tell me what you need — I’ll take care of it.",
+      "submitAriaLabel": "Submit",
+      "quickActions": {
+        "summary": {
+          "label": "Summary",
+          "value": "Can you give me a clear and concise summary of the following content? Feel free to highlight the key points and main idea."
+        },
+        "learn": {
+          "label": "Learn",
+          "value": "Teach me this topic in a simple and understandable way. Break it down step-by-step and include any examples or analogies that will help me learn it better."
+        },
+        "code": {
+          "label": "Code",
+          "value": "I need help writing or understanding some code. Please provide a clean, efficient solution and explain how it works."
+        },
+        "lifeStuff": {
+          "label": "Life stuff",
+          "value": "I need some advice or guidance about something personal or practical. Please give me a thoughtful and supportive response."
+        },
+        "billixChoice": {
+          "label": "Billix choice",
+          "value": "Pick something interesting or helpful for me—anything you think would be useful, insightful, or fun to explore."
+        }
+      }
+    },
+    "valueProposition": "Billix is the only AI coworker that gets work done across 500+ apps. With <highlight>Chat</highlight>, <highlight>Image generation</highlight>, and <highlight>Seamless integrations</highlight>, you give the instructions — Billix reads, clicks, writes, navigates software, and completes tasks end-to-end"
+  },
+  "howItWorks": {
+    "eyebrow": "How It works",
+    "title": "Say what you want Billix clicks, writes, and <serif>executes</serif>",
+    "description": "Forget manual steps or workflow builders, just tell Billix what needs to be done. It reads, clicks, writes, navigates, and completes the task across your tools automatically",
+    "discoverMore": "Discover more",
+    "step1": {
+      "title": "Tell Billix what you want",
+      "description": "Type or speak your request. Billix understands and starts executing immediately—no setup, diagrams, or steps.",
+      "typingInitial": "How can I help you today?",
+      "typingHover": "Create automated workflows instantly"
+    },
+    "step2": {
+      "title": "Billix executes across your tools",
+      "description": "Connects to 500+ apps — Gmail, Notion, Slack, HubSpot, and more. Billix completes multi-step tasks automatically."
+    },
+    "step3": {
+      "title": "Tell Billix what you want",
+      "description": "See results as Billix completes each step Everything is saved, organized, and fully searchable inside your workspace",
+      "cards": {
+        "midjourney": { "title": "Image generated", "time": "Just now" },
+        "hubspot": { "title": "CRM update completed", "time": "1 min ago" },
+        "gmail": { "title": "Email drafted", "time": "2 mins ago" },
+        "docs": { "title": "Document summary ready", "time": "3 mins ago" },
+        "calendar": { "title": "Meeting summary ready", "time": "4 mins ago" },
+        "notion": { "title": "New Notion page created", "time": "5 mins ago" }
+      }
+    }
+  },
+  "workspace": {
+    "eyebrow": "The Workspace",
+    "title": "The Workspace",
+    "description1": "Billix brings your tools, tasks, and AI capabilities into one unified workspace. Chat, delegate work, manage files, trigger automations, and connect with 500+ apps — with everything searchable, synced, and always up to date",
+    "description2": "Billix replaces scattered tools and messy workflows with one unified AI platform. Chat, automate tasks, create content, manage files, and connect with 100+ apps — all in one organized, searchable workspace.",
+    "cta": "Start for free"
+  },
+  "features": {
+    "eyebrow": "Why choose us",
+    "title": "Everything you need — <serif> zero setup </serif>Billix does the work for you",
+    "directExecution": {
+      "title": "Direction Execution",
+      "description": "Billix understands your intent and executes tasks inside your tools — reading, clicking, writing, and navigating automatically. No triggers. No flow. No setup."
+    },
+    "integrations": {
+      "title": "500+ Instant Integrations",
+      "description": "Billix connects to 500+ tools instantly — Slack, Notion, HubSpot, Gmail, ClickUp, Drive, and many more. No API keys. No setup. Billix works inside them like a real employee."
+    },
+    "orchestration": {
+      "title": "Smart AI Orchestration",
+      "description": "Billix uses 60+ AI models to reason, plan, and execute tasks end-to-end. It chooses the right action and the right tool automatically."
+    },
+    "security": {
+      "title": "Enterprise-Grade Security",
+      "description": "Your data stays encrypted, your credentials safe, and every action logged–while Billix executes tasks inside your tools securely."
+    },
+    "chat": {
+      "title": "Chat-Native Automation",
+      "description": "Type or speak your request. Billix understands your goal and starts executing immediately. No setup, no diagrams, no steps.",
+      "userMessage": "Create a task in Notion from this message and assign it to me for tomorrow",
+      "avatarAlt": "Avatar",
+      "steps": {
+        "extracting": "Extracting the task details",
+        "creating": "Creating a new Notion Item",
+        "assigning": "Assigning it to your for tomorrow"
+      },
+      "result": {
+        "line1": "Task created in Notion and scheduled",
+        "line2": "for tomorrow"
+      }
+    },
+    "actions": {
+      "title": "Real Actions, Not Just Responses",
+      "description": "Billix doesn't stop at generating text — it takes real actions across your stack. Send emails, post updates, create content, automate reports — all from chat.",
+      "items": {
+        "docs": "Billix created a Google Doc and shared it with your team",
+        "midjourney": "Billix generated an image with Midjourney",
+        "linkedin": "Billix posted your update to LinkedIn automatically",
+        "gmail": "Billix drafted an email in Gmail and sent it to your client",
+        "x": "Billix published a tweet to X on your behalf",
+        "dropbox": "Billix summarized a PDF and stored it in Dropbox",
+        "github": "Billix created a GitHub issue with your bug report",
+        "notion": "Billix synced your meeting notes to Notion automatically",
+        "airtable": "Billix synced your meeting notes to Notion automatically",
+        "drive": "Billix synced your meeting notes to Notion automatically"
+      }
+    }
+  },
+  "whyUs": {
+    "eyebrow": "Why Billix",
+    "heading": "Traditional automation tools require flows, logic, and triggers. Billix understands your goal and executes the task inside your apps — just like a real employee.",
+    "items": {
+      "setupFree": {
+        "label": "Setup-Free Automation",
+        "description": "Others: Spend hours building zaps, triggers, and actions. Billix: Just describe the outcome you want — we handle the logic, connections, and execution automatically. 'Send today's sales report to the team.' → Billix figures out the right files, generates the report, and sends it — no setup."
+      },
+      "naturalLanguage": {
+        "label": "Natural Language Control",
+        "description": "You don't need to learn a tool — you just talk to it. Billix understands context, handles multi-step workflows, and updates you when it's done."
+      },
+      "connected": {
+        "label": "Connected to Everything",
+        "description": "Over 500+ integrations out of the box — Gmail, Slack, Notion, HubSpot, Google Sheets, ClickUp, and more. If your app has an API, Billix can act on it."
+      },
+      "realExecution": {
+        "label": "Real Execution, Not Suggestions",
+        "description": "While other AI tools write responses, Billix actually performs the work. Think of it as your digital employee that gets things done — not just one that talks."
+      }
+    }
+  },
+  "compare": {
+    "eyebrow": "Compare",
+    "title": "<serif>Traditional Automation</serif> vs Billix Automation",
+    "description": "With Billix, you speak naturally — and it executes tasks inside your apps automatically. No triggers, no flows, no manual steps — just real AI doing real work.",
+    "traditional": {
+      "title": "Traditional Automation",
+      "items": [
+        "Require technical knowledge (triggers, conditions, variables).",
+        "You must manually build flows step-by-step",
+        "Every app needs configuration and mapping",
+        "Break easily when something changes lorem ipsum",
+        "Slow setup before you can get anything done"
+      ]
+    },
+    "billix": {
+      "title": "Billix Automation",
+      "items": [
+        "No tech skills — speak naturally; Billix handles automation and integrations.",
+        "Direct Execution — chat with your apps; Billix acts instantly",
+        "Unified Workspace — chat, automate, create, and manage everything",
+        "Zero Setup — no triggers, flow builders, or complex config.",
+        "Understands Intent — plain-language directions become real tasks."
+      ]
+    }
+  },
+  "integrations": {
+    "title": "All your apps. One AI Brain.",
+    "paragraph1": "Billix connects to 500+ apps and works inside them — sending emails, updating Notion, posting on social media, generating content, organizing files, and more. Connect once, and Billix handles the entire workflow automatically.",
+    "paragraph2": "Connect once, and Billix handles everything in the background — from sending emails to updating Notion to posting on social. It’s the simplest way to bring your entire tech stack into one intelligent AI.",
+    "count": "500+ Integrations"
+  },
+  "cta": {
+    "eyebrow": "Let's Make Life Easier",
+    "title": "Try Billix for<br></br>free<serif> right now</serif>",
+    "button": "Start for free",
+    "badges": {
+      "security": "Enterprise-<br></br>Grade Security",
+      "effortless": "Effortless<br></br>For Everyone",
+      "automation": "Automation<br></br>Made Natural",
+      "sync": "Unified<br></br>Workflow Sync"
+    },
+    "banner": "Start for free, right now"
+  }
+}

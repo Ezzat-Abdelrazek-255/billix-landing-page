@@ -2,21 +2,22 @@ import BubbleButton from "@/components/ui/bubble-button";
 import Eyebrow from "@/components/ui/eyebrow";
 import VideoPlayer from "@/components/ui/video-player";
 import { APP_URL } from "@/constants";
+import { useTranslations } from "next-intl";
 
 const TheWorkspaceSection = () => {
+  const t = useTranslations("home");
+
   return (
     <section className="grid-12 gap-[3.2rem] px-(--container-px) sm:gap-y-[6.4rem]">
       <div className="gap-base sm:gap-xl col-span-12 flex flex-col items-center sm:col-span-8 sm:col-start-3 md:col-span-6 md:col-start-4">
         <div data-reveal-group>
-          <Eyebrow>The Workspace</Eyebrow>
+          <Eyebrow>{t("workspace.eyebrow")}</Eyebrow>
         </div>
         <h1 data-split="heading" className="h1-serif">
-          <div className="pb-base-sm">The Workspace</div>
+          <div className="pb-base-sm">{t("workspace.title")}</div>
         </h1>
         <p data-split="heading" className="body-base text-center">
-          Billix brings your tools, tasks, and AI capabilities into one unified workspace. Chat, delegate work, manage
-          files, trigger automations, and connect with 500+ apps — with everything searchable, synced, and always up to
-          date
+          {t("workspace.description1")}
         </p>
       </div>
       <div
@@ -27,12 +28,11 @@ const TheWorkspaceSection = () => {
       </div>
       <div className="gap-base col-span-12 flex flex-col items-center sm:col-span-8 sm:col-start-3 md:col-span-6 md:col-start-4">
         <p data-split="heading" className="body-base text-center">
-          Billix replaces scattered tools and messy workflows with one unified AI platform. Chat, automate tasks, create
-          content, manage files, and connect with 100+ apps — all in one organized, searchable workspace.
+          {t("workspace.description2")}
         </p>
         <div data-reveal-group data-animate-whole>
           <BubbleButton isLink href={APP_URL} target="_blank">
-            Start for free
+            {t("workspace.cta")}
           </BubbleButton>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { BlogMarkdown, extractHeadings } from "./blog-markdown";
 import type { BlogPost } from "@/content/blogs";
 import { INTRO_STAGGER, LOADER_DELAY } from "@/constants";

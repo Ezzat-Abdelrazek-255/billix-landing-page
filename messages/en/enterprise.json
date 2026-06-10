@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "title": "Enterprise — AI Automation at Scale for Your Organization",
+    "description": "Billix Enterprise delivers AI-powered automation, team collaboration, and advanced security for large organizations. Scale your workflows with 500+ integrations and dedicated support.",
+    "ogTitle": "Enterprise — AI Automation at Scale | Billix",
+    "ogDescription": "AI-powered automation, team collaboration, and advanced security for large organizations."
+  },
+  "hero": {
+    "eyebrow": "Enterprise",
+    "title": "One AI platform for every team automation made <serif>simple for everyone</serif>",
+    "description": "Billix replaces disconnected tools with a unified AI workspace where teams can chat, automate, create content, handle files, and execute cross-platform tasks — all through natural conversation. No technical experience needed. No flow builders. No complex setup. Just point, speak, and Billix handles the execution.",
+    "cta": "Contact us"
+  },
+  "values": {
+    "eyebrow": "Our Values",
+    "title": "Your team's All-in-One AI Workspace for <serif>Workflows and Content</serif>",
+    "description": "Billix unifies communication, automation, and content creation in a single AI workspace. Teams can chat, automate tasks, manage files, and execute actions across tools — all through natural language. No setup, no flow builders, no technical experience needed.",
+    "tagline": "AI that scales your enterprise",
+    "features": {
+      "sync": "Unified Workflow Sync",
+      "effortless": "Effortless For Everyone",
+      "automation": "Enterprise-Grade Automation"
+    },
+    "timeline": {
+      "automations": "Unlimited automations",
+      "models": "Dedicated AI models",
+      "workspaces": "Team workspaces"
+    }
+  },
+  "statistics": {
+    "eyebrow": "Statistics",
+    "title": "AI employees built to <serif>do work</serif>, not just talk about it.",
+    "description": "Expand your team's capacity and boost efficiency with AI employees that deliver measurable business impact",
+    "cta": "Discover more",
+    "items": {
+      "productivity": {
+        "title": "More Productive teams",
+        "description": "Type or speak your request in natural language. Billix understands your intent and plans the workflow automatically."
+      },
+      "savings": {
+        "title": "Savings compared to hiring",
+        "description": "Connects to 10,000+ apps — Gmail, Notion, Slack, and more. Handles tasks end-to-end with no setup, triggers, or flow diagrams."
+      },
+      "revenue": {
+        "title": "higher revenue per employee",
+        "description": "Track your tasks in real-time, get updates, and access everything later—fully searchable and stored for reference."
+      }
+    }
+  }
+}

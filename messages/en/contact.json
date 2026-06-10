@@ -1,0 +1,37 @@
+{
+  "metadata": {
+    "title": "Contact Us — Get in Touch with the Billix Team",
+    "description": "Have a question or need help? Reach out to the Billix team. We'd love to hear from you about partnerships, enterprise needs, or general inquiries.",
+    "ogTitle": "Contact Us | Billix",
+    "ogDescription": "Have a question or need help? Reach out to the Billix team."
+  },
+  "heading": {
+    "eyebrow": "We're Here to help",
+    "title": "Contact us",
+    "description": "Whether you have a question, need support, or want to explore how Billix can fit into your workflow, our team is ready. Drop us a message, and we’ll get back to you as soon as possible.",
+    "todaysDate": "Today’s Date"
+  },
+  "form": {
+    "title": "Get In Touch",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "e.g. Ezzat Billix"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "e.g. ezzat@billix.io"
+      },
+      "number": {
+        "label": "Number",
+        "placeholder": "e.g. +1 (555) 012-3456"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Anything you would like us to know?"
+      }
+    },
+    "terms": "By clicking ‘Send Message’ you’re confirming that you agree with our <link>Terms and Conditions</link>",
+    "submit": "Send Message"
+  }
+}

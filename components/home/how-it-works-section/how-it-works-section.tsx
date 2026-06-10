@@ -5,23 +5,25 @@ import BubbleButton from "@/components/ui/bubble-button";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Eyebrow from "@/components/ui/eyebrow";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
+import { useTranslations } from "next-intl";
 
 const HowItWorksSection = () => {
+  const t = useTranslations("home");
+
   return (
     <section className="px-(--container-px)">
-      <Eyebrow className="mb-[1.6rem] sm:mb-[3.2rem]">How It works</Eyebrow>
+      <Eyebrow className="mb-[1.6rem] sm:mb-[3.2rem]">{t("howItWorks.eyebrow")}</Eyebrow>
       <div className="grid-12 gap-y-base sm:gap-y-xl mb-[3.2rem] sm:mb-[8rem]">
         <h2 data-split="heading" className="h2 col-span-12 sm:col-span-5">
-          Say what you want Billix clicks, writes, and <span className="h2-serif">executes</span>
+          {t.rich("howItWorks.title", { serif: chunks => <span className="h2-serif">{chunks}</span> })}
         </h2>
         <div className="gap-base col-span-12 flex flex-col items-start justify-end sm:col-span-5 sm:col-start-8 md:col-span-4 md:col-start-7">
           <p data-split="heading" className="text-foreground/60 w-full font-sans text-base font-medium">
-            Forget manual steps or workflow builders, just tell Billix what needs to be done. It reads, clicks, writes,
-            navigates, and completes the task across your tools automatically
+            {t("howItWorks.description")}
           </p>
           <div data-reveal-group data-animate-whole>
             <BubbleButton isLink href="/about">
-              Discover more
+              {t("howItWorks.discoverMore")}
             </BubbleButton>
           </div>
         </div>

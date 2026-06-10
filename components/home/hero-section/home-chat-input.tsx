@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import DirectionalButton from "@/components/ui/directional-button";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,44 +10,22 @@ import GraduationIcon from "@/icons/ui/graduation-icon";
 import HotCoffeeIcon from "@/icons/ui/hot-coffee-icon";
 import LampIcon from "@/icons/ui/lamp-icon";
 import PenIcon from "@/icons/ui/pen-icon";
+import { Link } from "@/i18n/navigation";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const QUICK_ACTIONS = [
-  {
-    label: "Summary",
-    icon: PenIcon,
-    value:
-      "Can you give me a clear and concise summary of the following content? Feel free to highlight the key points and main idea.",
-  },
-  {
-    label: "Learn",
-    icon: GraduationIcon,
-    value:
-      "Teach me this topic in a simple and understandable way. Break it down step-by-step and include any examples or analogies that will help me learn it better.",
-  },
-  {
-    label: "Code",
-    icon: CodeIcon,
-    value:
-      "I need help writing or understanding some code. Please provide a clean, efficient solution and explain how it works.",
-  },
-  {
-    label: "Life stuff",
-    icon: HotCoffeeIcon,
-    value:
-      "I need some advice or guidance about something personal or practical. Please give me a thoughtful and supportive response.",
-  },
-  {
-    label: "Billix choice",
-    icon: LampIcon,
-    value:
-      "Pick something interesting or helpful for me—anything you think would be useful, insightful, or fun to explore.",
-  },
-];
+  { id: "summary", icon: PenIcon },
+  { id: "learn", icon: GraduationIcon },
+  { id: "code", icon: CodeIcon },
+  { id: "lifeStuff", icon: HotCoffeeIcon },
+  { id: "billixChoice", icon: LampIcon },
+] as const;
 
 const HomeChatInput = () => {
+  const t = useTranslations("home");
   const [textAreaValue, setTextAreaValue] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -71,7 +48,7 @@ const HomeChatInput = () => {
         <div className="gap-sm relative z-0 col-span-12 flex flex-col items-center sm:col-span-8 sm:col-start-3 md:col-span-6 md:col-start-4">
           <div className="relative z-0 h-[12.6rem] w-full">
             <Textarea
-              placeholder="Tell me what you need — I’ll take care of it."
+              placeholder={t("hero.chat.placeholder")}
               className="h-full w-full"
               value={textAreaValue}
               onChange={e => setTextAreaValue(e.target.value)}
@@ -79,7 +56,7 @@ const HomeChatInput = () => {
             {/* Hover Animations and sync those different buttons with the main Button component */}
             <Button
               disabled={!textAreaValue}
-              aria-label="Submit"
+              aria-label={t("hero.chat.submitAriaLabel")}
               className="text-background disabled:bg-foreground/50 group absolute right-[1.6rem] bottom-[1.6rem] z-0 size-[3.2rem] rounded-full"
             >
               <Link
@@ -106,13 +83,13 @@ const HomeChatInput = () => {
               return (
                 <DirectionalButton
                   type="button"
-                  key={action.label}
-                  onClick={() => setTextAreaValue(action.value)}
+                  key={action.id}
+                  onClick={() => setTextAreaValue(t(`hero.chat.quickActions.${action.id}.value`))}
                   className="gap-sm px-base-sm py-sm border-foreground/20 text-foreground/60 bg-background flex cursor-pointer items-center rounded-full border font-sans text-base font-medium"
                 >
                   <div className="gap-sm flex items-center">
                     <Icon />
-                    <span>{action.label}</span>
+                    <span>{t(`hero.chat.quickActions.${action.id}.label`)}</span>
                   </div>
                 </DirectionalButton>
               );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import BubbleButton from "@/components/ui/bubble-button";
 import Eyebrow from "@/components/ui/eyebrow";
 import { INTRO_DURATION, INTRO_STAGGER, LOADER_DELAY } from "@/constants";
@@ -9,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const EnterpriseHeroSection = () => {
+  const t = useTranslations("enterprise");
   const containerRef = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -32,7 +34,7 @@ const EnterpriseHeroSection = () => {
     >
       <div className="gap-base sm:gap-xl col-span-12 flex flex-col items-center text-center sm:col-span-8 sm:col-start-3 md:col-span-7 md:col-start-1 md:items-start md:text-left">
         <div data-reveal-group data-reveal-delay={LOADER_DELAY + INTRO_STAGGER}>
-          <Eyebrow>Enterprise</Eyebrow>
+          <Eyebrow>{t("hero.eyebrow")}</Eyebrow>
         </div>
         <h1
           data-split="heading"
@@ -40,8 +42,9 @@ const EnterpriseHeroSection = () => {
           data-split-delay={LOADER_DELAY - 0.25}
           className="font-sans text-[4rem] leading-[1.1] font-bold tracking-tight sm:text-[5.6rem] md:text-[9.6rem]"
         >
-          One AI platform for every team automation made{" "}
-          <span className="inline-block pb-[1.2rem] font-serif font-light">simple for everyone</span>
+          {t.rich("hero.title", {
+            serif: (chunks) => <span className="inline-block pb-[1.2rem] font-serif font-light">{chunks}</span>,
+          })}
         </h1>
       </div>
       <div className="gap-base col-span-12 flex flex-col items-center sm:col-span-8 sm:col-start-3 md:col-span-4 md:col-start-8 md:items-start">
@@ -51,13 +54,11 @@ const EnterpriseHeroSection = () => {
           data-split-delay={LOADER_DELAY}
           className="body-base text-center md:text-left"
         >
-          Billix replaces disconnected tools with a unified AI workspace where teams can chat, automate, create content,
-          handle files, and execute cross-platform tasks — all through natural conversation. No technical experience
-          needed. No flow builders. No complex setup. Just point, speak, and Billix handles the execution.
+          {t("hero.description")}
         </p>
         <div data-reveal-group data-animate-whole data-reveal-delay={LOADER_DELAY + INTRO_STAGGER}>
           <BubbleButton isLink href="/contact">
-            Contact us
+            {t("hero.cta")}
           </BubbleButton>
         </div>
       </div>

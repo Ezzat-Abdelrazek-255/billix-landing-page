@@ -3,6 +3,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Fonts (Arabic falls back to IBM Plex Sans Arabic, see [dir="rtl"] below) */
+  --font-sans-active: var(--font-helvetica-now-pro-text);
+  --font-serif-active: var(--font-ivypresto-headline);
+
   /* Colors  */
   --background: #fff;
   --background-muted: #f3f3f4;
@@ -44,6 +48,11 @@
   --space-2xl: 4rem;
 }
 
+[dir="rtl"] {
+  --font-sans-active: var(--font-ibm-plex-sans-arabic), var(--font-helvetica-now-pro-text);
+  --font-serif-active: var(--font-ibm-plex-sans-arabic), var(--font-ivypresto-headline);
+}
+
 .dark {
   --background: #212121;
   --background-muted: #191919;
@@ -59,8 +68,8 @@
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
-  --font-sans: var(--font-helvetica-now-pro-text);
-  --font-serif: var(--font-ivypresto-headline);
+  --font-sans: var(--font-sans-active);
+  --font-serif: var(--font-serif-active);
 
   /* Font Sizes */
   --text-xs: 1rem;

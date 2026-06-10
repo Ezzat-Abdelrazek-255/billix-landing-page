@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "title": "Blog — AI Automation Tips, Updates & Insights",
+    "description": "Stay up to date with the latest from Billix. Read about AI automation, productivity tips, product updates, and how teams are transforming their workflows.",
+    "ogTitle": "Blog — AI Automation Tips, Updates & Insights | Billix",
+    "ogDescription": "Read about AI automation, productivity tips, product updates, and how teams are transforming their workflows."
+  },
+  "heading": {
+    "eyebrow": "Fresh Ideas, Every Week",
+    "title": "The Blogs",
+    "description": "Explore articles, guides, and deep dives designed to help you work smarter, build better systems, and stay ahead of the evolving productivity landscape.",
+    "lastUpdatedLabel": "Last updated",
+    "lastUpdatedDate": "March 10, 2026"
+  },
+  "cards": {
+    "searchPlaceholder": "Search for topics",
+    "noResults": "No articles found matching your search.",
+    "showMore": "Show more"
+  }
+}

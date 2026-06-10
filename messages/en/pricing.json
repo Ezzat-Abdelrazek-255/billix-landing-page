@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "Pricing — Plans for Every Team Size",
+    "description": "Choose the Billix plan that fits your needs. From individual users to enterprise teams — AI chat, automation, and 500+ integrations starting at $4/month.",
+    "ogTitle": "Pricing — Plans for Every Team Size | Billix",
+    "ogDescription": "AI chat, automation, and 500+ integrations starting at $4/month. Choose the plan that fits your needs."
+  },
+  "heading": {
+    "eyebrow": "Plans Designed Around How You Work",
+    "title": "Choose Your Plan",
+    "description": "Flexible plans designed for individuals, teams, and growing businesses. Choose the workflow power you need — no hidden fees, no surprises."
+  },
+  "billing": {
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "save": "Save 10%"
+  },
+  "card": {
+    "paidMonthly": "Paid Monthly",
+    "paidAnnually": "Paid Annually",
+    "free": "Free",
+    "usd": "Usd",
+    "perMonth": "per month",
+    "whatsIncluded": "What’s Included:",
+    "creditsPerMonth": "Credits per month"
+  }
+}

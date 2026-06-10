@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Eyebrow from "@/components/ui/eyebrow";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import AccessibilityIcon from "@/icons/ui/accessibility-icon";
@@ -7,32 +8,24 @@ import XIcon from "@/icons/ui/x-icon";
 
 const reasons = [
   {
+    id: "complexity",
     number: "01",
     icon: XIcon,
-    title: "To remove the complexity of modern work",
-    description:
-      "Work today is overloaded with tools, tabs, and manual steps. People spend more time switching between apps than actually getting work done. Billix exists to eliminate that complexity. We believe technology should feel invisible — you speak naturally, and your work simply happens. No configuration, no technical setup, just effortless execution.",
   },
   {
+    id: "teammate",
     number: "02",
     icon: TeamIcon,
-    title: "To Give Everyone an AI Teammate — Not Just an AI Chat",
-    description:
-      "Most AI tools stop at generating text. They don't take action, don't understand context, and don't integrate with how people actually work. Billix was built to bridge that gap. We exist to give every individual and every business a reliable AI teammate that can think, understand, and execute real tasks across tools in real time.",
   },
   {
+    id: "limits",
     number: "03",
     icon: LimitsIcon,
-    title: "To Break the Limits of Single-Model AI",
-    description:
-      "AI shouldn't lock you into one provider or one brain. Different tasks need different strengths — reasoning, creativity, precision, or speed. Billix brings 40+ models together into one workspace so users get the strongest intelligence for every situation. We exist to give people true AI freedom: the ability to choose, switch, and compare instantly.",
   },
   {
+    id: "accessibility",
     number: "04",
     icon: AccessibilityIcon,
-    title: "To Make Automation Accessible to Everyone",
-    description:
-      "Traditional automation tools require technical skills, triggers, flow builders, and endless setup. Most people never use them to their full potential. Billix exists to change that. Our automation is conversational, intuitive, and built for real humans — not engineers. If you can explain what you want, Billix can do it for you.",
   },
 ];
 
@@ -45,6 +38,7 @@ const ReasonCard = ({
   isFirst: boolean;
   isLast: boolean;
 }) => {
+  const t = useTranslations("about");
   const Icon = reason.icon;
 
   return (
@@ -63,10 +57,12 @@ const ReasonCard = ({
           <div className="border-foreground grid aspect-square h-full shrink-0 place-content-center rounded-full border border-dashed">
             <Icon />
           </div>
-          <p className="bg-background-muted py-sm px-base rounded-full font-sans font-medium">{reason.title}</p>
+          <p className="bg-background-muted py-sm px-base rounded-full font-sans font-medium">
+            {t(`whyWeExist.reasons.${reason.id}.title`)}
+          </p>
         </div>
         <p data-split="heading" className="text-foreground/60 body-base">
-          {reason.description}
+          {t(`whyWeExist.reasons.${reason.id}.description`)}
         </p>
       </div>
     </div>
@@ -74,12 +70,16 @@ const ReasonCard = ({
 };
 
 const AboutWhyWeExistSection = () => {
+  const t = useTranslations("about");
+
   return (
     <section className="grid-12 gap-xl px-(--container-px) sm:gap-y-[4.8rem]">
       <div className="gap-base sm:gap-xl col-span-12 flex flex-col sm:col-span-8 md:col-span-5">
-        <Eyebrow>Why we exist</Eyebrow>
+        <Eyebrow>{t("whyWeExist.eyebrow")}</Eyebrow>
         <h2 data-split="heading" data-split-padding-bottom="0.4rem" className="h2">
-          The reason behind<span className="h2-serif"> Everything </span>we build at Billix
+          {t.rich("whyWeExist.title", {
+            serif: (chunks) => <span className="h2-serif">{chunks}</span>,
+          })}
         </h2>
       </div>
       <div data-reveal-group className="col-start-12 self-end justify-self-end">

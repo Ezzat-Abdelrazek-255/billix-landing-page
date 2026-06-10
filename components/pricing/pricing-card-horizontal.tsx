@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { CHAT_URL } from "@/constants";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import type { PricingPlan } from "@/types";
 
 const PricingCardHorizontal = ({ plan, isAnnually = false }: { plan: PricingPlan; isAnnually?: boolean }) => {
+  const t = useTranslations("pricing");
   const { name, monthlyPrice, annualPrice, description, credits, features, buttonLabel, badge } = plan;
 
   const displayMonthly = monthlyPrice ?? 0;
@@ -34,7 +36,7 @@ const PricingCardHorizontal = ({ plan, isAnnually = false }: { plan: PricingPlan
                   isAnnually && "-translate-y-[150%]",
                 )}
               >
-                Paid Monthly
+                {t("card.paidMonthly")}
               </p>
               <p
                 className={cn(
@@ -42,7 +44,7 @@ const PricingCardHorizontal = ({ plan, isAnnually = false }: { plan: PricingPlan
                   isAnnually && "translate-y-0",
                 )}
               >
-                Paid Annually
+                {t("card.paidAnnually")}
               </p>
             </div>
           )}
@@ -61,14 +63,16 @@ const PricingCardHorizontal = ({ plan, isAnnually = false }: { plan: PricingPlan
                 <span className={cn("ease-primary inline-block duration-700", isAnnually && "-translate-y-[125%]")}>
                   ${displayMonthly.toString().padStart(2, "0")}
                 </span>{" "}
-                Usd
+                {t("card.usd")}
               </span>
             </>
           ) : (
-            <span className="leading-none uppercase">${displayMonthly.toString().padStart(2, "0")} Usd</span>
+            <span className="leading-none uppercase">
+              ${displayMonthly.toString().padStart(2, "0")} {t("card.usd")}
+            </span>
           )}
           <span className="gap-xs relative z-0 flex items-baseline font-serif text-lg font-light tracking-normal text-white">
-            per month
+            {t("card.perMonth")}
           </span>
         </p>
       </div>
@@ -80,13 +84,13 @@ const PricingCardHorizontal = ({ plan, isAnnually = false }: { plan: PricingPlan
       <div className="flex flex-1 flex-col">
         <p className="text-base-sm mb-[2rem] font-sans font-medium text-white/80">{description}</p>
         <div className="gap-sm flex flex-col">
-          <h4 className="font-serif text-lg">What&apos;s Included:</h4>
+          <h4 className="font-serif text-lg">{t("card.whatsIncluded")}</h4>
           <ul className="text-base-sm grid grid-cols-1 font-sans font-medium sm:grid-cols-2">
             <li className="py-base gap-sm flex items-center border-b border-b-white/20">
               <div className="bg-secondary px-base py-2xs rounded-full font-sans text-sm font-medium text-black">
                 {credits.toLocaleString()}
               </div>
-              <p>Credits per month</p>
+              <p>{t("card.creditsPerMonth")}</p>
             </li>
             {features.slice(1).map(feature => (
               <li key={feature.label} className="py-base gap-sm flex items-center border-b border-b-white/20">

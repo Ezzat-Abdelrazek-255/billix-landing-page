@@ -6,9 +6,11 @@ import PricingCardHorizontal from "./pricing-card-horizontal";
 import { CHAT_URL, INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 import type { PricingPlan } from "@/types";
 
 const PricingCards = () => {
+  const t = useTranslations("pricing");
   const [isAnnually, setIsAnnualy] = useState(false);
   const [plans, setPlans] = useState<PricingPlan[]>([]);
   const [loading, setLoading] = useState(true);
@@ -89,7 +91,7 @@ const PricingCards = () => {
                   isAnnually && "-translate-y-[150%]",
                 )}
               >
-                Monthly
+                {t("billing.monthly")}
               </span>
               <span
                 className={cn(
@@ -97,7 +99,7 @@ const PricingCards = () => {
                   isAnnually && "-translate-y-1/2",
                 )}
               >
-                Monthly
+                {t("billing.monthly")}
               </span>
             </div>
             <span className="btn__bg bg-foreground absolute top-1/2 left-1/2 -z-10 block aspect-square w-[150%] -translate-1/2 rounded-full" />
@@ -120,7 +122,7 @@ const PricingCards = () => {
                   !isAnnually && "-translate-y-[150%]",
                 )}
               >
-                Annually
+                {t("billing.annually")}
               </span>
               <span
                 className={cn(
@@ -128,12 +130,12 @@ const PricingCards = () => {
                   !isAnnually && "-translate-y-1/2",
                 )}
               >
-                Annually
+                {t("billing.annually")}
               </span>
             </div>
 
             <span className="px-base-sm py-xs bg-primary absolute top-[-2rem] -right-[5.2rem] rounded-full font-sans text-sm font-medium whitespace-nowrap text-white">
-              Save 10%
+              {t("billing.save")}
             </span>
 
             <span className="absolute inset-0 -z-10 h-full w-full overflow-hidden rounded-full">

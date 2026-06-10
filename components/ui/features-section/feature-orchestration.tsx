@@ -10,6 +10,7 @@ import LockIcon from "@/icons/ui/lock-icon";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
+import { useTranslations } from "next-intl";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -74,6 +75,7 @@ const IconCircle = ({ className, icon }: IconCircleProps) => (
 );
 
 const FeatureOrchestration = () => {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
   const setupMotionPath = (elements: HTMLDivElement[], path: SVGPathElement, positions: number[] | "even") => {
@@ -205,11 +207,8 @@ const FeatureOrchestration = () => {
 
       {/* Header */}
       <div className="feature-header text-primary relative z-10 flex w-full flex-col gap-2 text-center">
-        <h3 className="h3-serif mx-auto w-fit">Smart AI Orchestration</h3>
-        <p className="body-base-sm text-balance text-inherit">
-          Billix uses 60+ AI models to reason, plan, and execute tasks end-to-end. It chooses the right action and the
-          right tool automatically.
-        </p>
+        <h3 className="h3-serif mx-auto w-fit">{t("features.orchestration.title")}</h3>
+        <p className="body-base-sm text-balance text-inherit">{t("features.orchestration.description")}</p>
       </div>
 
       {/* Center Logo */}

@@ -7,47 +7,43 @@ import HubspotIcon from "@/icons/brands/hubspot-icon";
 import MidjourneyIcon from "@/icons/brands/midjourney-icon";
 import NotionIcon from "@/icons/brands/notion-icon";
 import { AnimatePresence, motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const CARDS = [
   {
+    id: "midjourney",
     icon: MidjourneyIcon,
-    title: "Image generated",
-    time: "Just now",
     service: "Midjourney",
   },
   {
+    id: "hubspot",
     icon: HubspotIcon,
-    title: "CRM update completed",
-    time: "1 min ago",
     service: "HubSpot",
   },
   {
+    id: "gmail",
     icon: GmailIcon,
-    title: "Email drafted",
-    time: "2 mins ago",
     service: "Gmail",
   },
   {
+    id: "docs",
     icon: DocsIcon,
-    title: "Document summary ready",
-    time: "3 mins ago",
     service: "Google Docs",
   },
   {
+    id: "calendar",
     icon: CalenderIcon,
-    title: "Meeting summary ready",
-    time: "4 mins ago",
     service: "Calendar",
   },
   {
+    id: "notion",
     icon: NotionIcon,
-    title: "New Notion page created",
-    time: "5 mins ago",
     service: "Notion",
   },
 ];
 
 const HowItWorksStepThree = () => {
+  const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
   const [cards, setCards] = useState(CARDS);
   const removedCard = useRef(CARDS[0]);
@@ -62,7 +58,7 @@ const HowItWorksStepThree = () => {
         if (prev.length === CARDS.length) {
           return [...rest];
         } else {
-          if (rest.find(item => item.title === removed.title)) return rest;
+          if (rest.find(item => item.id === removed.id)) return rest;
           return [...rest, removed];
         }
       });
@@ -83,11 +79,8 @@ const HowItWorksStepThree = () => {
     >
       <p className="h2">03</p>
       <div className="gap-sm flex flex-col">
-        <h3 className="h3">Tell Billix what you want</h3>
-        <p className="text-foreground/60 w-4/5 font-sans font-medium">
-          See results as Billix completes each step Everything is saved, organized, and fully searchable inside your
-          workspace
-        </p>
+        <h3 className="h3">{t("howItWorks.step3.title")}</h3>
+        <p className="text-foreground/60 w-4/5 font-sans font-medium">{t("howItWorks.step3.description")}</p>
       </div>
       <div className="absolute top-0 left-0 -z-10 h-full w-full">
         <div className="from-background-muted to-background-muted/0 absolute inset-0 z-10 h-full w-full bg-linear-to-t from-30% to-60%"></div>
@@ -97,7 +90,7 @@ const HowItWorksStepThree = () => {
               <motion.article
                 layoutId={card.service}
                 exit={{ opacity: 0 }}
-                key={card.title}
+                key={card.id}
                 className="bg-background card p-sm gap-base flex origin-top items-center rounded-sm"
               >
                 <div className="bg-background-muted p-base rounded-xs">
@@ -106,8 +99,8 @@ const HowItWorksStepThree = () => {
 
                 <div>
                   <div className="gap-sm flex items-center">
-                    <p className="font-sans font-medium">{card.title}</p>
-                    <p className="text-foreground/60 text-sm">{card.time}</p>
+                    <p className="font-sans font-medium">{t(`howItWorks.step3.cards.${card.id}.title`)}</p>
+                    <p className="text-foreground/60 text-sm">{t(`howItWorks.step3.cards.${card.id}.time`)}</p>
                   </div>
 
                   <p className="text-foreground/60 font-sans font-medium">{card.service}</p>

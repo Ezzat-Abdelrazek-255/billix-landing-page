@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "About Billix — Our Mission to Simplify Work with AI",
+    "description": "Billix was built with a simple belief: work shouldn't feel scattered or repetitive. Learn about our mission to create one intelligent AI workspace that listens, understands, and acts.",
+    "ogTitle": "About Billix — Our Mission to Simplify Work with AI",
+    "ogDescription": "Learn about our mission to create one intelligent AI workspace that listens, understands, and acts across all your apps."
+  },
+  "hero": {
+    "eyebrow": "About us",
+    "title": "Building the future of how work<serif> gets done</serif>",
+    "description": "Billix was created with a simple belief: work shouldn’t feel scattered, repetitive, or dependent on complicated tools. People should be able to get things done by simply expressing what they want — naturally, clearly, and without technical barriers."
+  },
+  "mission": {
+    "eyebrow": "Our Mission",
+    "statement": "Billix eliminates friction across your workflow — no triggers, no flow builders, no context switching. Just one intelligent workspace that listens, understands, and gets things done across all your apps."
+  },
+  "whyWeExist": {
+    "eyebrow": "Why we exist",
+    "title": "The reason behind<serif> Everything </serif>we build at Billix",
+    "reasons": {
+      "complexity": {
+        "title": "To remove the complexity of modern work",
+        "description": "Work today is overloaded with tools, tabs, and manual steps. People spend more time switching between apps than actually getting work done. Billix exists to eliminate that complexity. We believe technology should feel invisible — you speak naturally, and your work simply happens. No configuration, no technical setup, just effortless execution."
+      },
+      "teammate": {
+        "title": "To Give Everyone an AI Teammate — Not Just an AI Chat",
+        "description": "Most AI tools stop at generating text. They don't take action, don't understand context, and don't integrate with how people actually work. Billix was built to bridge that gap. We exist to give every individual and every business a reliable AI teammate that can think, understand, and execute real tasks across tools in real time."
+      },
+      "limits": {
+        "title": "To Break the Limits of Single-Model AI",
+        "description": "AI shouldn't lock you into one provider or one brain. Different tasks need different strengths — reasoning, creativity, precision, or speed. Billix brings 40+ models together into one workspace so users get the strongest intelligence for every situation. We exist to give people true AI freedom: the ability to choose, switch, and compare instantly."
+      },
+      "accessibility": {
+        "title": "To Make Automation Accessible to Everyone",
+        "description": "Traditional automation tools require technical skills, triggers, flow builders, and endless setup. Most people never use them to their full potential. Billix exists to change that. Our automation is conversational, intuitive, and built for real humans — not engineers. If you can explain what you want, Billix can do it for you."
+      }
+    }
+  },
+  "values": {
+    "eyebrow": "Our Values",
+    "title": "Clarity, efficiency, and trust empowering <serif>everyone</serif> to do more.",
+    "description": "We believe in simplicity, real results, and tools that anyone can use. Guided by our community and built on trust, we create solutions that empower everyone to achieve more, without barriers or complications.",
+    "cta": "Start for free",
+    "items": {
+      "simplicity": {
+        "title": "Simplicity Above All",
+        "description": "We believe technology should make life easier, not harder. If something feels complicated, we redesign it until it's intuitive and effortless for anyone to use."
+      },
+      "efficiency": {
+        "title": "Real Efficiency",
+        "description": "AI should do more than generate text—it should produce meaningful outcomes. Our focus is on tools that actually get things done."
+      },
+      "barriers": {
+        "title": "Zero Barriers",
+        "description": "Automation shouldn't require technical skills. We make sure anyone, regardless of experience, can harness powerful tools to achieve their goals."
+      }
+    }
+  }
+}

@@ -1,12 +1,11 @@
 import PageHeading from "@/components/ui/page-heading";
+import { useTranslations } from "next-intl";
 
 const PricingHeading = () => {
+  const t = useTranslations("pricing");
+
   return (
-    <PageHeading
-      eyebrow="Plans Designed Around How You Work"
-      title="Choose Your Plan"
-      description="Flexible plans designed for individuals, teams, and growing businesses. Choose the workflow power you need — no hidden fees, no surprises."
-    />
+    <PageHeading eyebrow={t("heading.eyebrow")} title={t("heading.title")} description={t("heading.description")} />
   );
 };
 

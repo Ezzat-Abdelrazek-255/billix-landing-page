@@ -6,14 +6,17 @@ import FeatureIntegrations from "./feature-integrations";
 import FeatureOrchestration from "./feature-orchestration";
 import FeatureSecurity from "./feature-security";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
+import { useTranslations } from "next-intl";
 
 const FeaturesSection = () => {
+  const t = useTranslations("home");
+
   return (
     <section className="grid-12 gap-xl px-(--container-px) sm:gap-y-[4.8rem]">
       <div className="gap-base sm:gap-xl col-span-12 flex flex-col items-center sm:col-span-8 sm:col-start-3 md:col-span-5 md:col-start-1 md:items-start">
-        <Eyebrow>Why choose us</Eyebrow>
+        <Eyebrow>{t("features.eyebrow")}</Eyebrow>
         <h2 data-split="heading" className="h2 text-center md:text-left">
-          Everything you need — <span className="h2-serif"> zero setup </span>Billix does the work for you
+          {t.rich("features.title", { serif: chunks => <span className="h2-serif">{chunks}</span> })}
         </h2>
       </div>
       <div data-reveal-group className="col-start-12 self-end justify-self-end">

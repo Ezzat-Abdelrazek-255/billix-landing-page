@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import BubbleButton from "./bubble-button";
 import DirectionalButton from "./directional-button";
@@ -11,6 +10,7 @@ import ThemeSelector from "./theme-selector";
 import { APP_URL, INTRO_DURATION, INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import LogoTextIcon from "@/icons/logos/logo-text";
 import { vhToPx } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -20,6 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Header = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const path = usePathname();
+  const t = useTranslations("common.actions");
 
   useGSAP(
     () => {
@@ -63,10 +64,10 @@ const Header = () => {
           </div>
           <div className="gap-sm flex items-center">
             <DirectionalButton asChild>
-              <NextLink href="/contact">Contact us</NextLink>
+              <NextLink href="/contact">{t("contactUs")}</NextLink>
             </DirectionalButton>
             <BubbleButton isLink href={APP_URL} target="_blank">
-              Start for free
+              {t("startForFree")}
             </BubbleButton>
             <ThemeSelector />
           </div>

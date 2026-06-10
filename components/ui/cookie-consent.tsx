@@ -1,40 +1,18 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import BubbleButton from "./bubble-button";
 import DirectionalButton from "./directional-button";
 import DotsPattern from "./dots-pattern";
 import { INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import CookiesIcon from "@/icons/ui/cookies-icon";
 import FileIcon from "@/icons/ui/file-icon";
+import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { X } from "lucide-react";
-
-const CONSENT_ITEMS = [
-  {
-    id: "cookies",
-    icon: CookiesIcon,
-    label: "Cookies",
-    description:
-      "By continuing to browse this website, you agree to the use of analytical cookies. These cookies help us collect anonymous statistics about site usage so we can improve performance and user experience.",
-  },
-  {
-    id: "privacy",
-    icon: FileIcon,
-    label: "Privacy",
-    description: (
-      <>
-        <Link className="text-primary underline" href="/privacy-policy">
-          Learn more
-        </Link>{" "}
-        about how we use cookies
-      </>
-    ),
-  },
-] as const;
 
 interface ConsentItemProps {
   icon: React.ComponentType;
@@ -80,6 +58,28 @@ const getCookieConsent = (): string | null => {
 const CookieConsent = () => {
   const containerRef = useRef(null);
   const [shouldShow, setShouldShow] = useState(false);
+  const t = useTranslations("common.cookieConsent");
+
+  const consentItems = [
+    {
+      id: "cookies",
+      icon: CookiesIcon,
+      label: t("cookiesLabel"),
+      description: t("cookiesDescription"),
+    },
+    {
+      id: "privacy",
+      icon: FileIcon,
+      label: t("privacyLabel"),
+      description: t.rich("privacyDescription", {
+        link: chunks => (
+          <Link className="text-primary underline" href="/privacy-policy">
+            {chunks}
+          </Link>
+        ),
+      }),
+    },
+  ] as const;
 
   useEffect(() => {
     const consent = getCookieConsent();
@@ -142,16 +142,16 @@ const CookieConsent = () => {
         <button
           onClick={handleClose}
           className="bg-foreground-muted p-sm absolute top-(--space-base) right-(--space-base) grid size-[3.2rem] cursor-pointer place-content-center rounded-full"
-          aria-label="Close cookie consent"
+          aria-label={t("closeAriaLabel")}
         >
           <X className="w-[1.6rem]" />
         </button>
 
         <div className="gap-base-lg flex flex-col">
-          <h2 className="text-background rounded-full font-serif text-xl leading-none font-light">Cookies notice</h2>
+          <h2 className="text-background rounded-full font-serif text-xl leading-none font-light">{t("title")}</h2>
 
           <div className="gap-x-base gap-y-sm grid grid-cols-[auto_1fr] grid-rows-[repeat(2,auto)]">
-            {CONSENT_ITEMS.map(item => (
+            {consentItems.map(item => (
               <ConsentItem key={item.id} icon={item.icon} label={item.label} description={item.description} />
             ))}
           </div>
@@ -159,10 +159,10 @@ const CookieConsent = () => {
 
         <div className="gap-sm flex w-full justify-end">
           <DirectionalButton onClick={handleReject} className="bg-foreground text-background border-background">
-            Reject cookies
+            {t("reject")}
           </DirectionalButton>
           <BubbleButton variant="secondary" onClick={handleAccept}>
-            Accept cookies
+            {t("accept")}
           </BubbleButton>
         </div>
       </div>
