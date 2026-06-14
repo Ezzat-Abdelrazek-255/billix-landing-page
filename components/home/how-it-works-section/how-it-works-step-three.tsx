@@ -84,7 +84,7 @@ const HowItWorksStepThree = () => {
       </div>
       <div className="absolute top-0 left-0 -z-10 h-full w-full">
         <div className="from-background-muted to-background-muted/0 absolute inset-0 z-10 h-full w-full bg-linear-to-t from-30% to-60%"></div>
-        <div className="gap-sm list absolute top-0 -right-1/2 flex w-full translate-y-[3.2rem] flex-col">
+        <div className="gap-sm list absolute top-0 -end-1/2 flex w-full translate-y-[3.2rem] flex-col">
           <AnimatePresence mode="popLayout">
             {cards.map(card => (
               <motion.article

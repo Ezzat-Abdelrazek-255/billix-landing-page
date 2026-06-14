@@ -106,7 +106,7 @@ const HowItWorksStepOne: React.FC = () => {
       </div>
       <div className="absolute top-0 left-0 -z-10 h-full w-full">
         <div className="from-background-muted to-background-muted/0 absolute inset-0 z-10 h-full w-full bg-linear-to-t from-30% to-60%"></div>
-        <div className="bg-background border-foreground/10 p-base text-foreground/70 ease-primary absolute top-1/2 -right-1/2 h-[15rem] w-full origin-bottom -translate-y-1/2 rounded-sm border font-sans text-base font-medium shadow-md duration-700 group-hover:-translate-y-[55%] group-hover:scale-105">
+        <div className="bg-background border-foreground/10 p-base text-foreground/70 ease-primary absolute top-1/2 -end-1/2 h-[15rem] w-full origin-bottom -translate-y-1/2 rounded-sm border font-sans text-base font-medium shadow-md duration-700 group-hover:-translate-y-[55%] group-hover:scale-105">
           <span ref={textRef}>{originalText}</span>
         </div>
       </div>
