@@ -5,7 +5,9 @@ import { shouldAnimate } from "@/lib/animation";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
-import { CustomEase, ScrollTrigger, SplitText } from "gsap/all";
+import { CustomEase } from "gsap/CustomEase";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 
 type SplitType = "lines" | "words" | "chars";
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import type { PillTexture } from "@/types";
 import { shouldAnimate } from "@/lib/animation";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Matter, { Bodies, Composite, Mouse, MouseConstraint } from "matter-js";
 
 interface PillImagePhysicsSimulationProps {

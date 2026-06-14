@@ -11,7 +11,7 @@ import FileIcon from "@/icons/ui/file-icon";
 import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { X } from "lucide-react";
 
 interface ConsentItemProps {

@@ -9,7 +9,7 @@ import RichContentSeparator from "../ui/rich-content/rich-content-separator";
 import { INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import { cn, remToPx } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const accountInfoItems = [
   "Name, email address, and profile image (via Google OAuth)",

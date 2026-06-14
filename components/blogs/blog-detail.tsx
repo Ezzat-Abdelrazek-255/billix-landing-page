@@ -7,7 +7,7 @@ import type { BlogPost } from "@/content/blogs";
 import { INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import { cn, remToPx } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const BlogDetail = ({ post }: { post: BlogPost }) => {
   const containerRef = useRef<HTMLDivElement>(null);
