@@ -1,10 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import DotsPattern from "./dots-pattern";
-import FallingObjects from "./falling-objects";
+import LazyVisible from "./lazy-visible";
 import LogoCircle from "@/icons/logos/logo-circle";
 import { useTheme } from "@/providers/theme-provider";
 import { useTranslations } from "next-intl";
+
+// Matter.js (~150KB) is decorative and below the fold — keep it out of the
+// initial bundle so it doesn't weigh on first-load hydration / LCP.
+const FallingObjects = dynamic(() => import("./falling-objects"), { ssr: false });
 
 const IntegrationsSection = () => {
   const t = useTranslations("home");
@@ -33,7 +38,8 @@ const IntegrationsSection = () => {
           {t("integrations.count")}
         </p>
         <DotsPattern />
-        <FallingObjects
+        <LazyVisible className="absolute inset-0">
+          <FallingObjects
           scale={1}
           pills={[
             { texture: theme === "light" ? "/pills/airtable.png" : "/pills/airtable-dark.png", width: 220, height: 60 },
@@ -57,7 +63,8 @@ const IntegrationsSection = () => {
             { texture: theme === "light" ? "/pills/telegram.png" : "/pills/telegram-dark.png", width: 220, height: 60 },
             { texture: theme === "light" ? "/pills/trello.png" : "/pills/trello-dark.png", width: 220, height: 60 },
           ]}
-        />
+          />
+        </LazyVisible>
       </div>
     </section>
   );

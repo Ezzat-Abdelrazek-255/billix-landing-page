@@ -1,6 +1,6 @@
 import BubbleButton from "@/components/ui/bubble-button";
 import Eyebrow from "@/components/ui/eyebrow";
-import VideoPlayer from "@/components/ui/video-player";
+import VideoPlayer from "@/components/ui/lazy-video-player";
 import { APP_URL } from "@/constants";
 import { useTranslations } from "next-intl";
 
