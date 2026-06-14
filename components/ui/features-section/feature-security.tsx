@@ -246,7 +246,6 @@ const FeatureSecurity = () => {
 
   useGSAP(
     () => {
-      // Skip decorative/looping animations on touch + small screens (perf).
       if (!shouldAnimate()) return;
       const circleSmallCircles = gsap.utils.toArray<HTMLDivElement>(".circle-small");
       const circleMediumCircles = gsap.utils.toArray<HTMLDivElement>(".circle-medium");

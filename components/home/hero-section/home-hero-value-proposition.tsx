@@ -30,9 +30,6 @@ const HomeHeroValueProposition = () => {
   const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // The decorative icon carousel is desktop-only (it's hidden under sm and its
-  // motion is gated). Mounting it client-side on desktop keeps its ~60 brand
-  // SVGs out of the mobile SSR HTML/DOM, shrinking the critical-path payload.
   const [showCarousel, setShowCarousel] = useState(false);
   useEffect(() => {
     setShowCarousel(shouldAnimate());
@@ -40,8 +37,6 @@ const HomeHeroValueProposition = () => {
 
   useGSAP(
     () => {
-      // Skip decorative/looping animations on touch + small screens (perf).
-      // Also wait until the carousel has actually mounted (see showCarousel).
       if (!shouldAnimate() || !showCarousel) return;
       const tl = gsap.timeline();
 

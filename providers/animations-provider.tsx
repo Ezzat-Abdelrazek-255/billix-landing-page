@@ -52,12 +52,6 @@ const AnimationsProvider = (): null => {
       const primaryEase = CustomEase.create("primary", "0.625, 0.05, 0, 1");
       gsap.registerEase("primary", primaryEase);
 
-      // Skip the expensive SplitText / ScrollTrigger reveal work on touch /
-      // small screens and for reduced-motion users. The plugins + "primary"
-      // ease are still registered above so the lightweight header/cookie
-      // animations keep working. Content is visible by default (reveal groups
-      // are never hidden, and [data-split] is shown via a CSS media query),
-      // so bailing here just means everything paints immediately.
       if (!shouldAnimate()) return;
 
       const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

@@ -6,8 +6,6 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   compress: true,
-  // Tree-shake large icon/animation packages so unused exports aren't shipped,
-  // reducing the JS that downloads and hydrates (helps TBT / LCP).
   experimental: {
     optimizePackageImports: ["lucide-react", "motion", "gsap"],
   },

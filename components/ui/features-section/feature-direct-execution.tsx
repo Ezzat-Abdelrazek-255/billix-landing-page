@@ -29,7 +29,6 @@ const FeatureDirectExecution = () => {
 
   useGSAP(
     () => {
-      // Skip decorative/looping animations on touch + small screens (perf).
       if (!shouldAnimate()) return;
       const elements = getAnimationElements();
       if (!elements) return;

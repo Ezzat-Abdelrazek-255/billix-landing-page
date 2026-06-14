@@ -32,8 +32,6 @@ const HomeChatInput = () => {
 
   useGSAP(
     () => {
-      // The intro hides the hero (opacity:0) until LOADER_DELAY. On mobile
-      // that delayed LCP — keep the chat input painted immediately there.
       if (!shouldAnimate()) return;
 
       gsap.from(containerRef.current, {

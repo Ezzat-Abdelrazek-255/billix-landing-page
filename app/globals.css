@@ -365,9 +365,6 @@ canvas {
   visibility: hidden;
 }
 
-/* On touch / small screens (and for reduced-motion users) the SplitText
-   reveal is skipped, so headings must be visible without waiting for JS.
-   This removes the ~3.4s LCP render-delay seen on mobile. */
 @media (max-width: 1023px), (prefers-reduced-motion: reduce) {
   [data-split="heading"] {
     visibility: visible;

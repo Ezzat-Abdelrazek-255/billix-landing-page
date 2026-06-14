@@ -52,7 +52,6 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
   weight: ["400", "500", "700"],
   display: "swap",
-  // Only used on Arabic pages — never preload it on the (English) critical path.
   preload: false,
   variable: "--font-ibm-plex-sans-arabic",
 });

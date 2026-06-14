@@ -7,8 +7,6 @@ import LogoCircle from "@/icons/logos/logo-circle";
 import { useTheme } from "@/providers/theme-provider";
 import { useTranslations } from "next-intl";
 
-// Matter.js (~150KB) is decorative and below the fold — keep it out of the
-// initial bundle so it doesn't weigh on first-load hydration / LCP.
 const FallingObjects = dynamic(() => import("./falling-objects"), { ssr: false });
 
 const IntegrationsSection = () => {

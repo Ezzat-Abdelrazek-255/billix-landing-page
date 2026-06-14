@@ -40,9 +40,6 @@ const Preloader = () => {
   }, []);
 
   useGSAP(async () => {
-    // On mobile/reduced-motion the loader is hidden via CSS (see wrapper
-    // class); don't run the reveal timeline (it would set display:block and
-    // cover the already-painted content), so content stays visible on load.
     if (!shouldAnimate()) return;
 
     const href = `/${pathname.split("/")[1] || ""}`;

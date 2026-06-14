@@ -33,7 +33,6 @@ const Marquee = ({
 
   useGSAP(
     () => {
-      // Skip decorative/looping animations on touch + small screens (perf).
       if (!shouldAnimate()) return;
       const items = gsap.utils.toArray<HTMLElement>(".marquee-item");
 

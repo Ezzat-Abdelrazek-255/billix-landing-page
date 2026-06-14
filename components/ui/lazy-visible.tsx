@@ -2,12 +2,7 @@
 
 import { type ReactNode, useEffect, useRef, useState } from "react";
 
-/**
- * Mounts its children only once they scroll near the viewport. Use to keep
- * heavy, purely-visual client code (physics, video) out of the initial
- * hydration path so it doesn't weigh on first-load LCP. Not for content that
- * needs to be in the SSR HTML for SEO.
- */
+// Mounts children only once they scroll near the viewport.
 const LazyVisible = ({
   children,
   className,

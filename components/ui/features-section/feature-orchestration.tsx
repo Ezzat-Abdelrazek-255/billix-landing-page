@@ -154,7 +154,6 @@ const FeatureOrchestration = () => {
 
   useGSAP(
     () => {
-      // Skip decorative/looping animations on touch + small screens (perf).
       if (!shouldAnimate()) return;
       const container = containerRef.current;
       if (!container) return;

@@ -16,7 +16,6 @@ const FeatureChat = () => {
 
   useGSAP(
     () => {
-      // Skip decorative/looping animations on touch + small screens (perf).
       if (!shouldAnimate()) return;
       const container = containerRef.current;
       const tl = gsap.timeline({
