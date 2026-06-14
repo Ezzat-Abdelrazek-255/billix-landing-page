@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { INTRO_DURATION, INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import { BRANDS } from "@/constants/brands";
 import { useGSAP } from "@gsap/react";
@@ -30,10 +30,19 @@ const HomeHeroValueProposition = () => {
   const t = useTranslations("home");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // The decorative icon carousel is desktop-only (it's hidden under sm and its
+  // motion is gated). Mounting it client-side on desktop keeps its ~60 brand
+  // SVGs out of the mobile SSR HTML/DOM, shrinking the critical-path payload.
+  const [showCarousel, setShowCarousel] = useState(false);
+  useEffect(() => {
+    setShowCarousel(shouldAnimate());
+  }, []);
+
   useGSAP(
     () => {
       // Skip decorative/looping animations on touch + small screens (perf).
-      if (!shouldAnimate()) return;
+      // Also wait until the carousel has actually mounted (see showCarousel).
+      if (!shouldAnimate() || !showCarousel) return;
       const tl = gsap.timeline();
 
       tl.from(
@@ -99,6 +108,7 @@ const HomeHeroValueProposition = () => {
     },
     {
       scope: containerRef,
+      dependencies: [showCarousel],
     },
   );
 
@@ -114,6 +124,7 @@ const HomeHeroValueProposition = () => {
         })}
       </p>
 
+      {showCarousel && (
       <div className="md:pt-xl col-span-12 hidden w-full justify-center overflow-hidden sm:flex">
         <div className="border-foreground/20 relative flex h-[10rem] min-h-[140px] w-full justify-center border-b">
           <div className="value-proposition__carousel relative flex h-full w-full justify-center will-change-transform">
@@ -147,6 +158,7 @@ const HomeHeroValueProposition = () => {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 };
