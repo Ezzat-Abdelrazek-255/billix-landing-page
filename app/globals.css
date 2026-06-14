@@ -57,6 +57,11 @@
   text-wrap: balance;
 }
 
+[dir="rtl"] :is(.h1-serif, .h2-serif, .h3-serif),
+[dir="rtl"] .font-serif {
+  font-weight: 500;
+}
+
 .dark {
   --background: #212121;
   --background-muted: #191919;
