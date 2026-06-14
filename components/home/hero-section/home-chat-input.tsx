@@ -11,6 +11,7 @@ import HotCoffeeIcon from "@/icons/ui/hot-coffee-icon";
 import LampIcon from "@/icons/ui/lamp-icon";
 import PenIcon from "@/icons/ui/pen-icon";
 import { Link } from "@/i18n/navigation";
+import { shouldAnimate } from "@/lib/animation";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ArrowUp } from "lucide-react";
@@ -31,6 +32,10 @@ const HomeChatInput = () => {
 
   useGSAP(
     () => {
+      // The intro hides the hero (opacity:0) until LOADER_DELAY. On mobile
+      // that delayed LCP — keep the chat input painted immediately there.
+      if (!shouldAnimate()) return;
+
       gsap.from(containerRef.current, {
         y: 80,
         opacity: 0,
@@ -62,6 +67,7 @@ const HomeChatInput = () => {
               <Link
                 href={APP_URL}
                 target="_blank"
+                aria-label={t("hero.chat.submitAriaLabel")}
                 className="bg-secondary ease-primary absolute z-10 grid h-full w-full origin-bottom scale-0 place-content-center rounded-full duration-700 group-hover:scale-100"
               >
                 <ArrowUp className="h-[1.6rem] text-black" />
@@ -69,6 +75,7 @@ const HomeChatInput = () => {
               <Link
                 href={APP_URL}
                 target="_blank"
+                aria-label={t("hero.chat.submitAriaLabel")}
                 className="bg-primary ease-primary grid h-full w-full origin-top place-content-center rounded-full duration-700 group-hover:scale-0"
               >
                 <ArrowUp className="h-[1.6rem] text-white" />
@@ -85,7 +92,7 @@ const HomeChatInput = () => {
                   type="button"
                   key={action.id}
                   onClick={() => setTextAreaValue(t(`hero.chat.quickActions.${action.id}.value`))}
-                  className="gap-sm px-base-sm py-sm border-foreground/20 text-foreground/60 bg-background flex cursor-pointer items-center rounded-full border font-sans text-base font-medium"
+                  className="gap-sm px-base-sm py-sm border-foreground/20 text-foreground/70 bg-background flex cursor-pointer items-center rounded-full border font-sans text-base font-medium"
                 >
                   <div className="gap-sm flex items-center">
                     <Icon />

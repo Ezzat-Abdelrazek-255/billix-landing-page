@@ -61,7 +61,7 @@ const ReasonCard = ({
             {t(`whyWeExist.reasons.${reason.id}.title`)}
           </p>
         </div>
-        <p data-split="heading" className="text-foreground/60 body-base">
+        <p data-split="heading" className="text-foreground/70 body-base">
           {t(`whyWeExist.reasons.${reason.id}.description`)}
         </p>
       </div>

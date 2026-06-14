@@ -155,6 +155,7 @@ const VideoPlayer = ({ src, className }: VideoPlayerProps) => {
         <button
           type="button"
           onClick={togglePlay}
+          aria-label="Play video"
           className="ease-primary absolute inset-0 z-10 grid place-content-center transition-opacity duration-500"
         >
           <div className="bg-background/90 text-foreground grid size-[9.6rem] place-content-center rounded-full shadow-lg backdrop-blur-sm">
@@ -188,7 +189,8 @@ const VideoPlayer = ({ src, className }: VideoPlayerProps) => {
             <button
               type="button"
               onClick={togglePlay}
-              className="text-white transition-opacity duration-200 hover:opacity-80"
+              aria-label={isPlaying ? "Pause" : "Play"}
+              className="grid min-h-[24px] min-w-[24px] place-content-center text-white transition-opacity duration-200 hover:opacity-80"
             >
               {isPlaying ? (
                 <Pause className="size-[2rem]" fill="currentColor" strokeWidth={0} />
@@ -200,7 +202,8 @@ const VideoPlayer = ({ src, className }: VideoPlayerProps) => {
               <button
                 type="button"
                 onClick={toggleMute}
-                className="text-white transition-opacity duration-200 hover:opacity-80"
+                aria-label={isMuted ? "Unmute" : "Mute"}
+                className="grid min-h-[24px] min-w-[24px] place-content-center text-white transition-opacity duration-200 hover:opacity-80"
               >
                 {isMuted ? (
                   <VolumeX className="size-[2rem]" />
@@ -225,7 +228,8 @@ const VideoPlayer = ({ src, className }: VideoPlayerProps) => {
           <button
             type="button"
             onClick={toggleFullscreen}
-            className="text-white transition-opacity duration-200 hover:opacity-80"
+            aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+            className="grid min-h-[24px] min-w-[24px] place-content-center text-white transition-opacity duration-200 hover:opacity-80"
           >
             {isFullscreen ? (
               <Minimize className="size-[2rem]" />

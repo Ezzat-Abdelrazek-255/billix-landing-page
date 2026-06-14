@@ -9,6 +9,7 @@ import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import LockIcon from "@/icons/ui/lock-icon";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 import { useTranslations } from "next-intl";
 
@@ -153,6 +154,8 @@ const FeatureOrchestration = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       const container = containerRef.current;
       if (!container) return;
 

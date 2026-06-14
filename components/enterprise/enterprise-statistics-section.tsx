@@ -24,7 +24,7 @@ const StatisticCard = ({ value, title, description }: { value: string; title: st
     <h3 className="h2 leading-none">{value}</h3>
     <div className="gap-sm flex flex-col">
       <h4 className="h3">{title}</h4>
-      <p className="text-base-sm text-foreground/60 max-w-[35ch] font-sans font-medium">{description}</p>
+      <p className="text-base-sm text-foreground/70 max-w-[35ch] font-sans font-medium">{description}</p>
     </div>
   </div>
 );
@@ -44,7 +44,7 @@ const EnterpriseStatisticsSection = () => {
         </h2>
 
         <div className="gap-base col-span-12 flex flex-col items-start justify-end sm:col-span-5 sm:col-start-8 md:col-span-4 md:col-start-7">
-          <p data-split="heading" className="text-foreground/60 w-full font-sans text-base font-medium">
+          <p data-split="heading" className="text-foreground/70 w-full font-sans text-base font-medium">
             {t("statistics.description")}
           </p>
           <div data-reveal-group data-animate-whole>

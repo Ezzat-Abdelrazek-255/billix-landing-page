@@ -10,6 +10,7 @@ import { cn, vhToPx } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -90,6 +91,8 @@ const HeaderCompact = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       gsap
         .timeline({
           scrollTrigger: {
@@ -127,6 +130,7 @@ const HeaderCompact = () => {
           <div data-navigation-toggle="close" className="absolute top-1/2 left-1/2 -translate-1/2">
             <NextLink
               href="/"
+              aria-label={t("nav.homeAriaLabel")}
               className="text-foreground pointer-events-auto hidden w-[7rem] items-center justify-center sm:flex"
             >
               <LogoSymbolIcon className="text-background h-full w-full" />
@@ -159,6 +163,7 @@ const HeaderCompact = () => {
           >
             <NextLink
               href="/"
+              aria-label={t("nav.homeAriaLabel")}
               className="text-foreground pointer-events-auto mt-[1.6rem] flex w-[7rem] items-center justify-center sm:hidden"
             >
               <LogoSymbolIcon className="text-background h-full w-full" />

@@ -102,11 +102,11 @@ const HowItWorksStepOne: React.FC = () => {
       <p className="h2">01</p>
       <div className="gap-sm flex flex-col">
         <h3 className="h3">{t("howItWorks.step1.title")}</h3>
-        <p className="text-foreground/60 w-4/5 font-sans font-medium">{t("howItWorks.step1.description")}</p>
+        <p className="text-foreground/70 w-4/5 font-sans font-medium">{t("howItWorks.step1.description")}</p>
       </div>
       <div className="absolute top-0 left-0 -z-10 h-full w-full">
         <div className="from-background-muted to-background-muted/0 absolute inset-0 z-10 h-full w-full bg-linear-to-t from-30% to-60%"></div>
-        <div className="bg-background border-foreground/10 p-base text-foreground/60 ease-primary absolute top-1/2 -right-1/2 h-[15rem] w-full origin-bottom -translate-y-1/2 rounded-sm border font-sans text-base font-medium shadow-md duration-700 group-hover:-translate-y-[55%] group-hover:scale-105">
+        <div className="bg-background border-foreground/10 p-base text-foreground/70 ease-primary absolute top-1/2 -right-1/2 h-[15rem] w-full origin-bottom -translate-y-1/2 rounded-sm border font-sans text-base font-medium shadow-md duration-700 group-hover:-translate-y-[55%] group-hover:scale-105">
           <span ref={textRef}>{originalText}</span>
         </div>
       </div>

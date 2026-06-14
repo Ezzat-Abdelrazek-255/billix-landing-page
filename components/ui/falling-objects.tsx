@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { PillTexture } from "@/types";
+import { shouldAnimate } from "@/lib/animation";
 import { ScrollTrigger } from "gsap/all";
 import Matter, { Bodies, Composite, Mouse, MouseConstraint } from "matter-js";
 
@@ -16,6 +17,10 @@ const PillImagePhysicsSimulation = ({ pills, scale = 0.4, restitution = 0.4 }: P
 
   useEffect(() => {
     if (!containerRef.current || pills.length === 0) return;
+    // The physics engine runs a continuous main-thread loop. The panel is
+    // hidden below `md` anyway, so skip Matter.js entirely on mobile /
+    // reduced-motion to avoid wasted CPU and Total Blocking Time.
+    if (!shouldAnimate()) return;
 
     const width = containerRef.current.clientWidth;
     const height = containerRef.current.clientHeight;

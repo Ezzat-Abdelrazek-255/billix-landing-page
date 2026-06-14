@@ -14,6 +14,7 @@ const ThemeSelector = ({ className }: { className?: string }) => {
     <button
       data-theme={theme}
       onClick={toggleTheme}
+      aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
       className={cn(
         "border-foreground/60 bg-background text-foreground group relative z-0 size-[4rem] cursor-pointer overflow-hidden rounded-full border border-dashed",
         className,
@@ -44,7 +45,7 @@ const ThemeSelectorSecondary = function({ className }: { className?: string }) {
         <RadioGroupItem value="light" id="light" />
         <label
           className={cn(
-            "ease-primary text-foreground/60 peer-data-[state=checked]:text-foreground origin-left cursor-pointer transition-all duration-700 peer-data-[state=unchecked]:-translate-x-[1.6rem]",
+            "ease-primary text-foreground/70 peer-data-[state=checked]:text-foreground origin-left cursor-pointer transition-all duration-700 peer-data-[state=unchecked]:-translate-x-[1.6rem]",
             className,
           )}
           data-underline-link
@@ -59,7 +60,7 @@ const ThemeSelectorSecondary = function({ className }: { className?: string }) {
           data-underline-link
           htmlFor="dark"
           className={cn(
-            "ease-primary text-foreground/60 peer-data-[state=checked]:text-foreground origin-left cursor-pointer transition-all duration-700 peer-data-[state=unchecked]:-translate-x-[1.6rem]",
+            "ease-primary text-foreground/70 peer-data-[state=checked]:text-foreground origin-left cursor-pointer transition-all duration-700 peer-data-[state=unchecked]:-translate-x-[1.6rem]",
             className,
           )}
         >

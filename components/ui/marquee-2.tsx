@@ -4,6 +4,7 @@ import { horizontalLoop } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 
 interface MarqueeProps {
   speed?: number;
@@ -32,6 +33,8 @@ const Marquee = ({
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       const items = gsap.utils.toArray<HTMLElement>(".marquee-item");
 
       // Clean up previous animation if it exists

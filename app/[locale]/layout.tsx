@@ -8,7 +8,7 @@ import Header from "@/components/ui/header";
 import HeaderCompact from "@/components/ui/header-compact";
 import Noise from "@/components/ui/noise";
 import Preloader from "@/components/ui/preloader";
-import { APP_URL } from "@/constants";
+import { SITE_URL } from "@/constants";
 import JsonLd from "@/components/seo/json-ld";
 import Providers from "@/providers/providers";
 import { routing } from "@/i18n/routing";
@@ -68,7 +68,7 @@ export async function generateMetadata({
   const siteDescription = t("description");
 
   return {
-    metadataBase: new URL(APP_URL || "https://billix.io"),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: siteTitle,
       template: "%s | Billix",
@@ -106,7 +106,7 @@ export async function generateMetadata({
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_AR" : "en_US",
-      url: locale === "ar" ? "https://billix.io/ar" : "https://billix.io",
+      url: locale === "ar" ? `${SITE_URL}/ar` : SITE_URL,
       siteName: "Billix",
       title: siteTitle,
       description: siteDescription,
@@ -139,11 +139,11 @@ export async function generateMetadata({
       },
     },
     alternates: {
-      canonical: locale === "ar" ? "https://billix.io/ar" : "https://billix.io",
+      canonical: locale === "ar" ? `${SITE_URL}/ar` : SITE_URL,
       languages: {
-        en: "https://billix.io",
-        ar: "https://billix.io/ar",
-        "x-default": "https://billix.io",
+        en: SITE_URL,
+        ar: `${SITE_URL}/ar`,
+        "x-default": SITE_URL,
       },
     },
     category: "technology",

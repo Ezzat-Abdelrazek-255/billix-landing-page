@@ -73,7 +73,7 @@ const CookieConsent = () => {
       label: t("privacyLabel"),
       description: t.rich("privacyDescription", {
         link: chunks => (
-          <Link className="text-primary underline" href="/privacy-policy">
+          <Link className="text-secondary font-medium underline" href="/privacy-policy">
             {chunks}
           </Link>
         ),

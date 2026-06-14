@@ -7,6 +7,7 @@ import LockIcon from "@/icons/ui/lock-icon";
 import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import { useTranslations } from "next-intl";
 
 // Constants
@@ -28,6 +29,8 @@ const FeatureDirectExecution = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       const elements = getAnimationElements();
       if (!elements) return;
 

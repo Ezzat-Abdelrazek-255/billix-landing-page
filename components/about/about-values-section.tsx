@@ -41,7 +41,7 @@ const ValueCard: FC<ValueCardProps> = ({ title, icon: Icon, description }) => (
       <h3 className="font-sans text-[3.2rem] leading-[1.1] font-bold">{title}</h3>
       <Icon />
     </div>
-    <p className="body-base text-foreground/60">{description}</p>
+    <p className="body-base text-foreground/70">{description}</p>
   </div>
 );
 
@@ -60,7 +60,7 @@ const AboutValuesSection: FC = () => {
         </h2>
 
         <div className="gap-base col-span-12 flex flex-col items-start justify-end sm:col-span-5 sm:col-start-8 md:col-span-4 md:col-start-7">
-          <p data-split="heading" className="text-foreground/60 w-full font-sans text-base font-medium">
+          <p data-split="heading" className="text-foreground/70 w-full font-sans text-base font-medium">
             {t("values.description")}
           </p>
           <div data-reveal-group data-animate-whole>
