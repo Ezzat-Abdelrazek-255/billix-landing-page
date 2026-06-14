@@ -22,6 +22,7 @@ const ivyprestoHeadline = localFont({
   src: "../fonts/IvyprestoHeadline-LightItalic.woff2",
   style: "italic",
   weight: "300",
+  display: "swap",
   variable: "--font-ivypresto-headline",
 });
 
@@ -43,12 +44,16 @@ const helveticaNowProText = localFont({
       style: "normal",
     },
   ],
+  display: "swap",
   variable: "--font-helvetica-now-pro-text",
 });
 
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
   weight: ["400", "500", "700"],
+  display: "swap",
+  // Only used on Arabic pages — never preload it on the (English) critical path.
+  preload: false,
   variable: "--font-ibm-plex-sans-arabic",
 });
 
@@ -168,7 +173,7 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
-      className={`${ivyprestoHeadline.variable} ${helveticaNowProText.variable} ${ibmPlexSansArabic.variable}`}
+      className={`${ivyprestoHeadline.variable} ${helveticaNowProText.variable} ${locale === "ar" ? ibmPlexSansArabic.variable : ""}`}
     >
       <head>
         <JsonLd />
