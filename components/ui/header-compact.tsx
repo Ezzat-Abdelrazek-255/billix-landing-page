@@ -125,7 +125,10 @@ const HeaderCompact = () => {
       {/* Nav container */}
       <div className="bg-foreground nav-header absolute inset-x-(--container-px) top-[calc(var(--container-px)/2)] flex h-auto w-[calc(100%-var(--container-px)*2)] flex-col items-stretch rounded-sm sm:left-1/2 sm:w-[68rem] sm:-translate-x-1/2 md:-translate-y-[6.4rem] md:opacity-0">
         {/* Header */}
-        <div className="px-base bg-foreground relative z-[1] flex h-(--header-compact-height) items-center justify-between overflow-hidden rounded-sm">
+        <div
+          dir="ltr"
+          className="px-base bg-foreground relative z-[1] flex h-(--header-compact-height) items-center justify-between overflow-hidden rounded-sm"
+        >
           <div data-navigation-toggle="close" className="absolute top-1/2 left-1/2 -translate-1/2">
             <NextLink
               href="/"

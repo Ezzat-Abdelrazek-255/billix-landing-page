@@ -141,7 +141,7 @@ const CookieConsent = () => {
         <DotsPattern colorVariable="--background" className="opacity-10" />
         <button
           onClick={handleClose}
-          className="bg-foreground-muted p-sm absolute top-(--space-base) right-(--space-base) grid size-[3.2rem] cursor-pointer place-content-center rounded-full"
+          className="bg-foreground-muted p-sm absolute top-(--space-base) end-(--space-base) grid size-[3.2rem] cursor-pointer place-content-center rounded-full"
           aria-label={t("closeAriaLabel")}
         >
           <X className="w-[1.6rem]" />

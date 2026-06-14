@@ -57,7 +57,10 @@ const Header = () => {
   return (
     <div ref={containerRef} className="pointer-events-none fixed inset-0 z-[200] hidden md:block">
       <header className="pointer-events-auto fixed top-0 left-0 h-(--header-height) w-full px-(--container-px)">
-        <div className="header__inner_wrap relative z-0 block flex h-full origin-top items-center justify-between overflow-hidden">
+        <div
+          dir="ltr"
+          className="header__inner_wrap relative z-0 block flex h-full origin-top items-center justify-between overflow-hidden"
+        >
           <NextLink href="/">
             <LogoTextIcon />
           </NextLink>

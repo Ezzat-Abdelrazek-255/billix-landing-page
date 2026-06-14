@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import { IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "../globals.css";
 import Debug from "@/components/debug/debug";
 import CookieConsent from "@/components/ui/cookie-consent";
@@ -48,12 +48,12 @@ const helveticaNowProText = localFont({
   variable: "--font-helvetica-now-pro-text",
 });
 
-const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
+const cairo = Cairo({
   subsets: ["arabic"],
-  weight: ["400", "500", "700"],
+  weight: ["300", "400", "500", "700"],
   display: "swap",
   preload: false,
-  variable: "--font-ibm-plex-sans-arabic",
+  variable: "--font-cairo",
 });
 
 export function generateStaticParams() {
@@ -172,7 +172,7 @@ export default async function RootLayout({
       data-scroll-behavior="smooth"
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
-      className={`${ivyprestoHeadline.variable} ${helveticaNowProText.variable} ${locale === "ar" ? ibmPlexSansArabic.variable : ""}`}
+      className={`${ivyprestoHeadline.variable} ${helveticaNowProText.variable} ${locale === "ar" ? cairo.variable : ""}`}
     >
       <head>
         <JsonLd />

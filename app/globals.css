@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Fonts (Arabic falls back to IBM Plex Sans Arabic, see [dir="rtl"] below) */
+  /* Fonts (Arabic uses Cairo, see [dir="rtl"] below) */
   --font-sans-active: var(--font-helvetica-now-pro-text);
   --font-serif-active: var(--font-ivypresto-headline);
 
@@ -49,8 +49,12 @@
 }
 
 [dir="rtl"] {
-  --font-sans-active: var(--font-ibm-plex-sans-arabic), var(--font-helvetica-now-pro-text);
-  --font-serif-active: var(--font-ibm-plex-sans-arabic), var(--font-ivypresto-headline);
+  --font-sans-active: var(--font-cairo), var(--font-helvetica-now-pro-text);
+  --font-serif-active: var(--font-cairo), var(--font-ivypresto-headline);
+}
+
+[dir="rtl"] :is(.h1, .h1-serif, .h2, .h2-serif, .h3, .h3-serif) {
+  text-wrap: balance;
 }
 
 .dark {

@@ -61,7 +61,7 @@ const ButtonInner = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div className="group relative z-0 flex h-[4rem]">
+    <div dir="ltr" className="group relative z-0 flex h-[4rem]">
       <div
         className={cn(
           "bg-primary ease-primary grid aspect-square h-full origin-left scale-0 rotate-45 place-content-center rounded-full text-white duration-700 group-hover:scale-100 group-hover:rotate-0",
