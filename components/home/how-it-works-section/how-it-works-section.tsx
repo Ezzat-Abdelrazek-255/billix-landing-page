@@ -4,6 +4,7 @@ import HowItWorksStepTwo from "./how-it-works-step-two";
 import BubbleButton from "@/components/ui/bubble-button";
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Eyebrow from "@/components/ui/eyebrow";
+import LazyVisible from "@/components/ui/lazy-visible";
 import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import { useTranslations } from "next-intl";
 
@@ -33,13 +34,19 @@ const HowItWorksSection = () => {
       </div>
       <div data-reveal-group className="gap-base hidden grid-cols-12 md:grid">
         <div className="col-span-4">
-          <HowItWorksStepOne />
+          <LazyVisible>
+            <HowItWorksStepOne />
+          </LazyVisible>
         </div>
         <div className="col-span-4">
-          <HowItWorksStepTwo />
+          <LazyVisible>
+            <HowItWorksStepTwo />
+          </LazyVisible>
         </div>
         <div className="col-span-4">
-          <HowItWorksStepThree />
+          <LazyVisible>
+            <HowItWorksStepThree />
+          </LazyVisible>
         </div>
       </div>
       <Carousel className="md:hidden">
