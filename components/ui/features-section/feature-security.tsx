@@ -5,6 +5,7 @@ import LockIcon from "@/icons/ui/lock-icon";
 import WarningIcon from "@/icons/ui/warning-icon";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 import { CircleCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -245,6 +246,8 @@ const FeatureSecurity = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       const circleSmallCircles = gsap.utils.toArray<HTMLDivElement>(".circle-small");
       const circleMediumCircles = gsap.utils.toArray<HTMLDivElement>(".circle-medium");
       const circleBigCircles = gsap.utils.toArray<HTMLDivElement>(".circle-big");

@@ -40,10 +40,14 @@ const FooterSection = ({ title, links }: { title: string; links: ReadonlyArray<{
   return (
     <div className="gap-base sm:gap-xl flex flex-col">
       <h3 className="text-base-lg font-sans font-medium">{title}</h3>
-      <ul className="gap-sm text-base-sm text-foreground/60 flex flex-col font-sans font-medium">
+      <ul className="gap-sm text-base-sm text-foreground/70 flex flex-col font-sans font-medium">
         {links.map(link => (
           <li key={link.key}>
-            <NextLink data-underline-link className="hover:text-primary transition-all" href={link.href}>
+            <NextLink
+              data-underline-link
+              className="hover:text-primary inline-flex min-h-[24px] items-center py-[4px] transition-all"
+              href={link.href}
+            >
               {t(link.key)}
             </NextLink>
           </li>
@@ -60,7 +64,7 @@ const Footer = () => {
     <footer className="grid-12 gap-y-xl mt-[3.2rem] px-(--container-px) py-(--container-px) md:gap-y-[6.4rem]">
       <div className="gap-base md:gap-lg col-span-12 flex flex-col items-start sm:col-span-8 md:col-span-4">
         <LogoTextIcon className="w-[16rem]" />
-        <p className="text-base-sm text-foreground/60 font-sans font-medium">{t("description")}</p>
+        <p className="text-base-sm text-foreground/70 font-sans font-medium">{t("description")}</p>
       </div>
 
       <div className="gap-xl col-span-12 flex flex-col justify-between sm:flex-row md:col-span-6 md:col-start-7">

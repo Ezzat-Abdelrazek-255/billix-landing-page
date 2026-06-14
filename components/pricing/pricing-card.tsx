@@ -83,7 +83,7 @@ const PricingCard = ({
           )}
           <span
             className={cn(
-              "text-foreground/60 gap-xs relative z-0 flex items-baseline font-serif text-lg font-light tracking-normal",
+              "text-foreground/70 gap-xs relative z-0 flex items-baseline font-serif text-lg font-light tracking-normal",
               variant === "secondary" && "text-white",
             )}
           >

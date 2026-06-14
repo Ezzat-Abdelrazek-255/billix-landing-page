@@ -7,6 +7,7 @@ import LogoSymbolIcon from "@/icons/logos/logo-symbol";
 import LampIcon from "@/icons/ui/lamp-icon";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import { useTranslations } from "next-intl";
 
 const FeatureChat = () => {
@@ -15,6 +16,8 @@ const FeatureChat = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       const container = containerRef.current;
       const tl = gsap.timeline({
         paused: true,

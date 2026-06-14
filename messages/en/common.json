@@ -13,7 +13,8 @@
     "changelog": "Changelog",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "securityPolicy": "Security Policy"
+    "securityPolicy": "Security Policy",
+    "homeAriaLabel": "Billix home"
   },
   "actions": {
     "contactUs": "Contact us",
@@ -86,7 +87,7 @@
     "cookiesLabel": "Cookies",
     "cookiesDescription": "By continuing to browse this website, you agree to the use of analytical cookies. These cookies help us collect anonymous statistics about site usage so we can improve performance and user experience.",
     "privacyLabel": "Privacy",
-    "privacyDescription": "<link>Learn more</link> about how we use cookies",
+    "privacyDescription": "Learn how we use cookies in our <link>privacy policy</link>",
     "closeAriaLabel": "Close cookie consent",
     "reject": "Reject cookies",
     "accept": "Accept cookies"

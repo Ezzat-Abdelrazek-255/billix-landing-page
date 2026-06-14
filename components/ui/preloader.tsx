@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { usePathname } from "@/i18n/navigation";
 import { ALL_ROUTES } from "@/constants";
+import { shouldAnimate } from "@/lib/animation";
 import LogoTextIcon from "@/icons/logos/logo-text";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -39,6 +40,11 @@ const Preloader = () => {
   }, []);
 
   useGSAP(async () => {
+    // On mobile/reduced-motion the loader is hidden via CSS (see wrapper
+    // class); don't run the reveal timeline (it would set display:block and
+    // cover the already-painted content), so content stays visible on load.
+    if (!shouldAnimate()) return;
+
     const href = `/${pathname.split("/")[1] || ""}`;
     await new Promise(resolve => {
       const pageClass = classMap[href];
@@ -97,7 +103,10 @@ const Preloader = () => {
   });
 
   return (
-    <div data-load-wrap className="loader pointer-events-none fixed inset-0 z-[10000] h-dvh w-full">
+    <div
+      data-load-wrap
+      className="loader pointer-events-none fixed inset-0 z-[10000] h-dvh w-full max-[1023px]:hidden"
+    >
       <div className="absolute inset-0 z-20 h-full w-full bg-[url(/noise.png)] opacity-35"></div>
       <div data-load-bg className="loader__bg bg-foreground absolute inset-0">
         <div

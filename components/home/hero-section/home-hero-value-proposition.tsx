@@ -5,6 +5,7 @@ import { INTRO_DURATION, INTRO_STAGGER, LOADER_DELAY } from "@/constants";
 import { BRANDS } from "@/constants/brands";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 import { useTranslations } from "next-intl";
 
@@ -31,6 +32,8 @@ const HomeHeroValueProposition = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       const tl = gsap.timeline();
 
       tl.from(
@@ -104,7 +107,7 @@ const HomeHeroValueProposition = () => {
       <p
         data-split="heading"
         data-split-delay={LOADER_DELAY + INTRO_STAGGER}
-        className="text-foreground/60 value-proposition__text col-span-12 text-center sm:col-span-8 sm:col-start-3 md:col-span-6 md:col-start-4"
+        className="text-foreground/70 value-proposition__text col-span-12 text-center sm:col-span-8 sm:col-start-3 md:col-span-6 md:col-start-4"
       >
         {t.rich("hero.valueProposition", {
           highlight: chunks => <span className="text-primary">{chunks}</span>,

@@ -80,7 +80,7 @@ const HowItWorksStepThree = () => {
       <p className="h2">03</p>
       <div className="gap-sm flex flex-col">
         <h3 className="h3">{t("howItWorks.step3.title")}</h3>
-        <p className="text-foreground/60 w-4/5 font-sans font-medium">{t("howItWorks.step3.description")}</p>
+        <p className="text-foreground/70 w-4/5 font-sans font-medium">{t("howItWorks.step3.description")}</p>
       </div>
       <div className="absolute top-0 left-0 -z-10 h-full w-full">
         <div className="from-background-muted to-background-muted/0 absolute inset-0 z-10 h-full w-full bg-linear-to-t from-30% to-60%"></div>
@@ -100,10 +100,10 @@ const HowItWorksStepThree = () => {
                 <div>
                   <div className="gap-sm flex items-center">
                     <p className="font-sans font-medium">{t(`howItWorks.step3.cards.${card.id}.title`)}</p>
-                    <p className="text-foreground/60 text-sm">{t(`howItWorks.step3.cards.${card.id}.time`)}</p>
+                    <p className="text-foreground/70 text-sm">{t(`howItWorks.step3.cards.${card.id}.time`)}</p>
                   </div>
 
-                  <p className="text-foreground/60 font-sans font-medium">{card.service}</p>
+                  <p className="text-foreground/70 font-sans font-medium">{card.service}</p>
                 </div>
               </motion.article>
             ))}

@@ -13,6 +13,7 @@ import { vhToPx } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { shouldAnimate } from "@/lib/animation";
 import { ScrollTrigger } from "gsap/all";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -24,6 +25,8 @@ const Header = () => {
 
   useGSAP(
     () => {
+      // Skip decorative/looping animations on touch + small screens (perf).
+      if (!shouldAnimate()) return;
       gsap
         .timeline({
           scrollTrigger: {

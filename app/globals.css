@@ -218,15 +218,15 @@
   }
 
   .body-base {
-    @apply text-foreground/60 font-sans text-base font-medium;
+    @apply text-foreground/70 font-sans text-base font-medium;
   }
 
   .body-base-lg {
-    @apply text-foreground/60 text-base-lg font-sans font-medium;
+    @apply text-foreground/70 text-base-lg font-sans font-medium;
   }
 
   .body-base-sm {
-    @apply text-base-sm text-foreground/60 font-sans font-medium;
+    @apply text-base-sm text-foreground/70 font-sans font-medium;
   }
 
   .grid-12 {
@@ -363,4 +363,13 @@ canvas {
 
 [data-split="heading"] {
   visibility: hidden;
+}
+
+/* On touch / small screens (and for reduced-motion users) the SplitText
+   reveal is skipped, so headings must be visible without waiting for JS.
+   This removes the ~3.4s LCP render-delay seen on mobile. */
+@media (max-width: 1023px), (prefers-reduced-motion: reduce) {
+  [data-split="heading"] {
+    visibility: visible;
+  }
 }
