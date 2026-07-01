@@ -30,7 +30,8 @@
       "legal": "Legal"
     },
     "followAriaLabel": "Follow Billix on {network}",
-    "copyright": "© {year} Billix Organization. All rights reserved."
+    "copyright": "© {year} Billix Organization. All rights reserved.",
+    "credit": "Developed & designed by <portfolio>Ezzat Abdelrazek</portfolio>"
   },
   "faqs": {
     "eyebrow": "FAQS",

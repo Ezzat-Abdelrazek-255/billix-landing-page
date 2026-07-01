@@ -93,6 +93,24 @@ const Footer = () => {
           {t("copyright", { year: getCurrentYear() })}
         </p>
       </div>
+
+      <div className="border-foreground/10 col-span-12 border-t pt-(--container-px)">
+        <p className="text-base-sm text-foreground/50 font-sans font-medium">
+          {t.rich("credit", {
+            portfolio: chunks => (
+              <a
+                href="https://ezzatabdelrazek.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-underline-link
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                {chunks}
+              </a>
+            ),
+          })}
+        </p>
+      </div>
     </footer>
   );
 };

@@ -30,7 +30,8 @@
       "legal": "قانوني"
     },
     "followAriaLabel": "تابع بيليكس على {network}",
-    "copyright": "© {year} مؤسسة بيليكس. جميع الحقوق محفوظة."
+    "copyright": "© {year} مؤسسة بيليكس. جميع الحقوق محفوظة.",
+    "credit": "تطوير وتصميم <portfolio>عزت عبدالرازق</portfolio>"
   },
   "faqs": {
     "eyebrow": "الأسئلة الشائعة",
